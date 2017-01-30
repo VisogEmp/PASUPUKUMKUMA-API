@@ -6,13 +6,9 @@ public abstract class AbstractModel {
 
 	private String id;
 
-	private String createdSid;
-
 	private String createdBy;
 
 	private Date createdOn;
-
-	private String updatedSid;
 
 	private String updatedBy;
 
@@ -26,13 +22,7 @@ public abstract class AbstractModel {
 		this.id = id;
 	}
 
-	public String getCreatedSid() {
-		return createdSid;
-	}
-
-	public void setCreatedSid(String createdSid) {
-		this.createdSid = createdSid;
-	}
+	
 
 	public String getCreatedBy() {
 		return createdBy;
@@ -50,13 +40,7 @@ public abstract class AbstractModel {
 		this.createdOn = createdOn;
 	}
 
-	public String getUpdatedSid() {
-		return updatedSid;
-	}
-
-	public void setUpdatedSid(String updatedSid) {
-		this.updatedSid = updatedSid;
-	}
+	
 
 	public String getUpdatedBy() {
 		return updatedBy;

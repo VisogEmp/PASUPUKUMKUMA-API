@@ -11,7 +11,6 @@ import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
-
 @Table(name = "ROLES")
 @Entity
 public class Roles extends AbstractModel {
@@ -25,9 +24,6 @@ public class Roles extends AbstractModel {
 
 	@Column(name = "DESCRIPTION")
 	private String description;
-	
-	@Column(name = "CREATED_SID")
-	private String createdSid;
 
 	@Column(name = "CREATED_BY")
 	private String createdBy;
@@ -36,63 +32,19 @@ public class Roles extends AbstractModel {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdOn;
 
-	@Column(name = "UPDATED_SID")
-	private String updatedSid;
-
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
 
 	@Column(name = "UPDATED_ON")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedOn;
-	
 
-	public String getCreatedSid() {
-		return createdSid;
+	public String getId() {
+		return id;
 	}
 
-	public void setCreatedSid(String createdSid) {
-		this.createdSid = createdSid;
-	}
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public Date getCreatedOn() {
-		return createdOn;
-	}
-
-	public void setCreatedOn(Date createdOn) {
-		this.createdOn = createdOn;
-	}
-
-	public String getUpdatedSid() {
-		return updatedSid;
-	}
-
-	public void setUpdatedSid(String updatedSid) {
-		this.updatedSid = updatedSid;
-	}
-
-	public String getUpdatedBy() {
-		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
-	}
-
-	public Date getUpdatedOn() {
-		return updatedOn;
-	}
-
-	public void setUpdatedOn(Date updatedOn) {
-		this.updatedOn = updatedOn;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -111,14 +63,36 @@ public class Roles extends AbstractModel {
 		this.description = description;
 	}
 
-	public String getId() {
-		return id;
+	public String getCreatedBy() {
+		return createdBy;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
-	
-	
+
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	public Date getUpdatedOn() {
+		return updatedOn;
+	}
+
+	public void setUpdatedOn(Date updatedOn) {
+		this.updatedOn = updatedOn;
+	}
 
 }
