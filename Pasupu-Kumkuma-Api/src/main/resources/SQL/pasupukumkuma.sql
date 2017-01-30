@@ -1,7 +1,7 @@
 -- MySQL dump 10.13  Distrib 5.5.45, for Linux (x86_64)
 --
 -- Host: localhost    Database: pasupukumkuma
--- ------------------------------------------------------
+-- -------------------------------------------------------
 -- Server version	5.5.45-cll-lve
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
