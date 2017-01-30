@@ -1,7 +1,7 @@
 MASTER ROLES:
 =============
 
-1. Create ROLE
+1. Create ROLES
 =====================================
 url : /master/role
 ex url : /master/role
