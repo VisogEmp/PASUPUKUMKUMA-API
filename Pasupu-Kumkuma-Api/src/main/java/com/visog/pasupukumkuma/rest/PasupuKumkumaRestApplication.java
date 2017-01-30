@@ -8,9 +8,7 @@ import javax.ws.rs.core.Application;
 import com.visog.pasupukumkuma.rest.controller.AdminController;
 import com.visog.pasupukumkuma.rest.controller.SuperAdminController;
 import com.visog.pasupukumkuma.rest.controller.master.CountryController;
-import com.visog.pasupukumkuma.rest.controller.master.ManagerController;
 import com.visog.pasupukumkuma.rest.controller.master.RolesController;
-import com.visog.pasupukumkuma.rest.controller.master.StudentController;
 
 
 
@@ -23,8 +21,6 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(AdminController.class);
 		classes.add(SuperAdminController.class);
 		classes.add(RolesController.class);
-		classes.add(ManagerController.class);
-		classes.add(StudentController.class);
 		classes.add(CountryController.class);
 	}
 
