@@ -1,5 +1,6 @@
 package com.visog.pasupukumkuma.res;
 
+
 public class StateRes {
 
 	private String id;
@@ -31,5 +32,6 @@ public class StateRes {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 
 }

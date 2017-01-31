@@ -4,7 +4,7 @@ public class StateReq {
 
 	private String name;
 
-	private String code;
+	private String country;
 
 	public String getName() {
 		return name;
@@ -14,12 +14,15 @@ public class StateReq {
 		this.name = name;
 	}
 
-	public String getCode() {
-		return code;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setCountry(String country) {
+		this.country = country;
 	}
+
+	
+
 	
 }
