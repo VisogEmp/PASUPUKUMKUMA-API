@@ -1,10 +1,13 @@
 package com.visog.pasupukumkuma.model.master;
 
+
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -12,19 +15,26 @@ import javax.persistence.TemporalType;
 import com.visog.pasupukumkuma.model.AbstractModel;
 
 
-@Table(name ="COUNTRY")
+@Table(name ="CITY")
 @Entity
-public class Country extends AbstractModel{
-	
+
+public class City extends AbstractModel {
+
 	@Id
 	@Column(name ="ID")
 	private String id;
 	
-	@Column(name ="CODE")
-	private String code;
 	
 	@Column(name ="NAME")
 	private String name;
+	
+	@ManyToOne
+	@JoinColumn(name ="COUNTRY_ID")
+	private State state;
+	
+	@Column(name ="ORDER_NUM")
+	private Integer ordernum;
+	
 	
 	@Column(name = "CREATED_BY")
 	private String createdBy;
@@ -49,14 +59,6 @@ public class Country extends AbstractModel{
 		this.id = id;
 	}
 
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -65,6 +67,21 @@ public class Country extends AbstractModel{
 		this.name = name;
 	}
 
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+
+	public Integer getOrdernum() {
+		return ordernum;
+	}
+
+	public void setOrdernum(Integer ordernum) {
+		this.ordernum = ordernum;
+	}
 
 	public String getCreatedBy() {
 		return createdBy;
@@ -82,7 +99,6 @@ public class Country extends AbstractModel{
 		this.createdOn = createdOn;
 	}
 
-
 	public String getUpdatedBy() {
 		return updatedBy;
 	}
@@ -98,6 +114,6 @@ public class Country extends AbstractModel{
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-	
 
+	
 }

@@ -25,11 +25,13 @@ public class CountryServiceImpl implements CountryService {
 	public void saveCountry(CountryReq req) {
 
 		Country country =new Country();
-		country.setCode(req.getCode());
-		country.setName(req.getName());
 		
-		dao.save(country);
+		country.setName(req.getName());
+		country.setCode(req.getCode());
+		
 		DaoUtils.setEntityCreateAuditColumns(country);
+
+		dao.save(country);
 		
 		logger.info("Country is created Successfully"+country.getId());
 	}

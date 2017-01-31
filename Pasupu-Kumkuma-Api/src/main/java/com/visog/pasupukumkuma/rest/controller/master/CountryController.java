@@ -83,7 +83,7 @@ public class CountryController {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getCountry(countryId));
-		pasupuKumkumaResponse.setMessage("Role fetched succcessfully");
+		pasupuKumkumaResponse.setMessage("country fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
