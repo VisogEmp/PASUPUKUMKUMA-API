@@ -8,4 +8,6 @@ import com.visog.pasupukumkuma.model.master.City;
 public interface CityDao extends AbstractDaoI {
 
 	public List<City> getCity();
+	
+	public Boolean isCityExists(String name);
 }

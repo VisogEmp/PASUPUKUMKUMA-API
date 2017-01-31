@@ -10,6 +10,7 @@ import com.visog.pasupukumkuma.rest.controller.SuperAdminController;
 import com.visog.pasupukumkuma.rest.controller.master.CountryController;
 import com.visog.pasupukumkuma.rest.controller.master.ManagerController;
 import com.visog.pasupukumkuma.rest.controller.master.RolesController;
+import com.visog.pasupukumkuma.rest.controller.master.StateController;
 import com.visog.pasupukumkuma.rest.controller.master.StudentController;
 
 
@@ -26,6 +27,7 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(ManagerController.class);
 		classes.add(StudentController.class);
 		classes.add(CountryController.class);
+		classes.add(StateController.class);
 	}
 
 	public Set<Object> getSingletons() {

@@ -22,7 +22,7 @@ public class CityDaoImpl extends AbstractDao implements CityDao{
 private static final Logger logger = Logger.getLogger(CityDaoImpl.class);
 	
 	
-	public List<City>  getCity() {
+	public List<City> getCity() {
 		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<City> q = cb.createQuery(City.class);
@@ -30,5 +30,20 @@ private static final Logger logger = Logger.getLogger(CityDaoImpl.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
 	}
+	
+	public Boolean isCityExists(String name) {
+
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Long> q = cb.createQuery(Long.class);
+		Root<City> c = q.from(City.class);
+		q.where(cb.equal(cb.lower(c.get("name")), name.toLowerCase()));
+		q.select(cb.count(c));
+		return (em.createQuery(q).getSingleResult() != 0L);
+
+	}
+	
+	
 }
+
+
 

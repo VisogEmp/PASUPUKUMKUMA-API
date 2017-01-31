@@ -18,7 +18,7 @@ import com.visog.pasupukumkuma.model.master.State;
 @Transactional
 public class StateDaoImpl extends AbstractDao implements StateDao {
 
-	private static final Logger logger = Logger.getLogger(CountryDaoImpl.class);
+	private static final Logger logger = Logger.getLogger(StateDaoImpl.class);
 
 	public List<State> getState() {
 

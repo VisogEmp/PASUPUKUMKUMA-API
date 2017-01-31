@@ -28,9 +28,15 @@ public class City extends AbstractModel {
 	@Column(name ="NAME")
 	private String name;
 	
+	
 	@ManyToOne
-	@JoinColumn(name ="COUNTRY_ID")
+	@JoinColumn(name ="STATE_ID")
 	private State state;
+	
+	
+	@Column(name ="COUNTRY_ID")
+	private String country;
+	
 	
 	@Column(name ="ORDER_NUM")
 	private Integer ordernum;
@@ -75,6 +81,14 @@ public class City extends AbstractModel {
 		this.state = state;
 	}
 
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
 	public Integer getOrdernum() {
 		return ordernum;
 	}
@@ -115,5 +129,6 @@ public class City extends AbstractModel {
 		this.updatedOn = updatedOn;
 	}
 
+	
 	
 }

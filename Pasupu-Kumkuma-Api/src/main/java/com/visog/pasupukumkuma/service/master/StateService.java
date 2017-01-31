@@ -7,7 +7,7 @@ import com.visog.pasupukumkuma.res.StateRes;
 
 public interface StateService {
 	
-public Boolean saveState(StateReq req);
+    public Boolean saveState(StateReq req);
 	
 	public Boolean updateState(StateReq req, String stateId);
 	
