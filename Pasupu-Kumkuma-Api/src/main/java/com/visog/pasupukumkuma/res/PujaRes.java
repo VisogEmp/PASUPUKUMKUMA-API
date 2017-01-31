@@ -1,6 +1,6 @@
 package com.visog.pasupukumkuma.res;
 
-public class PujasRes {
+public class PujaRes {
 	
 	private String id;
 	

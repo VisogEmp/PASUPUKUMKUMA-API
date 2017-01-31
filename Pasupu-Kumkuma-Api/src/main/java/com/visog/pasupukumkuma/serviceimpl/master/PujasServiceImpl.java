@@ -8,10 +8,10 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.dao.master.PujasDao;
-import com.visog.pasupukumkuma.model.master.Pujas;
+import com.visog.pasupukumkuma.model.master.Puja;
 import com.visog.pasupukumkuma.model.master.Roles;
-import com.visog.pasupukumkuma.req.PujasReq;
-import com.visog.pasupukumkuma.res.PujasRes;
+import com.visog.pasupukumkuma.req.PujaReq;
+import com.visog.pasupukumkuma.res.PujaRes;
 import com.visog.pasupukumkuma.res.RolesRes;
 import com.visog.pasupukumkuma.service.master.PujasService;
 import com.visog.pasupukumkuma.utils.DaoUtils;
@@ -27,9 +27,9 @@ public class PujasServiceImpl implements PujasService{
 	 * This method saves the Pujas
 	 */
 
-	public void savePujas(PujasReq req) {
+	public void savePujas(PujaReq req) {
 		
-		Pujas pujas = new Pujas();
+		Puja pujas = new Puja();
 		pujas.setName(req.getName());
 		pujas.setDescription(req.getDescription());
 		pujas.setPrice(req.getPrice());
@@ -48,9 +48,9 @@ public class PujasServiceImpl implements PujasService{
 	/**
 	 * This method updates the Pujas
 	 */
-	public void updatePujas(PujasReq req, String pujasId) {
+	public void updatePujas(PujaReq req, String pujasId) {
 		
-		Pujas pujas = (Pujas) dao.getByKey(Pujas.class, pujasId);
+		Puja pujas = (Puja) dao.getByKey(Puja.class, pujasId);
 		pujas.setName(req.getName());
 		pujas.setDescription(req.getDescription());
 		pujas.setPrice(req.getPrice());
@@ -63,15 +63,15 @@ public class PujasServiceImpl implements PujasService{
 		
 	}
 
-	public List<PujasRes> getPujas() {
+	public List<PujaRes> getPujas() {
 		
-		List<Pujas> pujas = dao.getPujas();
+		List<Puja> pujas = dao.getPujas();
 
-		List<PujasRes> pujasList = new ArrayList<>();
-		PujasRes pujasRes = null;
+		List<PujaRes> pujasList = new ArrayList<>();
+		PujaRes pujasRes = null;
 
-		for (Pujas puja : pujas) {
-			pujasRes = new PujasRes();
+		for (Puja puja : pujas) {
+			pujasRes = new PujaRes();
 			pujasRes.setId(puja.getId());
 			pujasRes.setName(puja.getName());
 			pujasRes.setDescription(puja.getDescription());
@@ -91,10 +91,10 @@ public class PujasServiceImpl implements PujasService{
 	 * This method returns Pujas Details for the given puja id  
 	 */
 
-	public PujasRes getPujas(String id) {
+	public PujaRes getPujas(String id) {
 		
-		Pujas puja = (Pujas) dao.getByKey(Pujas.class, id);
-		PujasRes pujaRes = new PujasRes();
+		Puja puja = (Puja) dao.getByKey(Puja.class, id);
+		PujaRes pujaRes = new PujaRes();
 		pujaRes.setId(puja.getId());
 		pujaRes.setName(puja.getName());
 		pujaRes.setDescription(puja.getDescription());
@@ -102,9 +102,13 @@ public class PujasServiceImpl implements PujasService{
 		pujaRes.setDuration(puja.getDuration());
 		return pujaRes;
 	}
+	
+	/**
+	 * This method deletes the given puja  
+	 */
 
 	public Boolean deletePujas(String pujasId) {
-		return null;
+		return (dao.delete(Puja.class, pujasId) != 0);
 	}
 	
 	

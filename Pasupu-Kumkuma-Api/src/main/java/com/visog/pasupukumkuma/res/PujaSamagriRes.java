@@ -1,16 +1,30 @@
-package com.visog.pasupukumkuma.req;
+package com.visog.pasupukumkuma.res;
 
-public class PujasReq {
+public class PujaSamagriRes {
+
+    private String id;
 	
 	private String name;
 	
 	private String description;
 	
-	private String price;
+	private Double price;
 	
 	private String duration;
 	
 	private String photo;
+	
+	private Integer samagri_count;
+	
+	private String status;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
@@ -28,11 +42,11 @@ public class PujasReq {
 		this.description = description;
 	}
 
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
@@ -51,7 +65,22 @@ public class PujasReq {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	
-	
 
+	public Integer getSamagri_count() {
+		return samagri_count;
+	}
+
+	public void setSamagri_count(Integer samagri_count) {
+		this.samagri_count = samagri_count;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	
 }

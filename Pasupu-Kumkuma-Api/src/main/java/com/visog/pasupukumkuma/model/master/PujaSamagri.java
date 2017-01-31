@@ -5,15 +5,17 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
-@Table(name = "PUJAS")
+@Table(name = "PUJA_SAMAGRI")
 @Entity
-public class Pujas extends AbstractModel{
+public class PujaSamagri extends AbstractModel {
 	
 	@Id
 	@Column(name="ID")
@@ -24,9 +26,9 @@ public class Pujas extends AbstractModel{
 	
 	@Column(name="DESCRIPTION")
 	private String description;
-
-	@Column(name = "PRICE")
-	private String price;
+	
+	@Column(name="PRICE")
+	private Double price;
 	
 	@Column(name="DURATION")
 	private String duration;
@@ -34,10 +36,18 @@ public class Pujas extends AbstractModel{
 	@Column(name="PHOTO")
 	private String photo;
 	
-
-	@Column(name = "CREATED_BY")
+	@Column(name="SAMAGRI_COUNT")
+	private Integer samagri_count;
+	
+	
+	
+	/*@ManyToOne
+	@JoinColumn(name="STATUS_ID")
+    private Status status;*/
+	
+	@Column(name="CREATED_BY")
 	private String createdBy;
-
+	
 	@Column(name = "CREATED_ON")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdOn;
@@ -73,11 +83,11 @@ public class Pujas extends AbstractModel{
 		this.description = description;
 	}
 
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
@@ -89,6 +99,14 @@ public class Pujas extends AbstractModel{
 		this.duration = duration;
 	}
 
+	public Integer getSamagri_count() {
+		return samagri_count;
+	}
+
+	public void setSamagri_count(Integer samagri_count) {
+		this.samagri_count = samagri_count;
+	}
+
 	public String getPhoto() {
 		return photo;
 	}
@@ -96,6 +114,14 @@ public class Pujas extends AbstractModel{
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
+
+	/*public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}*/
 
 	public String getCreatedBy() {
 		return createdBy;
@@ -128,7 +154,9 @@ public class Pujas extends AbstractModel{
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-
-
 	
+	
+	
+	
+
 }

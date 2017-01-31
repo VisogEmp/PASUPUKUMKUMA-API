@@ -8,6 +8,7 @@ import javax.ws.rs.core.Application;
 import com.visog.pasupukumkuma.rest.controller.AdminController;
 import com.visog.pasupukumkuma.rest.controller.SuperAdminController;
 import com.visog.pasupukumkuma.rest.controller.master.CountryController;
+import com.visog.pasupukumkuma.rest.controller.master.PujaController;
 import com.visog.pasupukumkuma.rest.controller.master.RolesController;
 
 
@@ -22,6 +23,7 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(SuperAdminController.class);
 		classes.add(RolesController.class);
 		classes.add(CountryController.class);
+		classes.add(PujaController.class);
 	}
 
 	public Set<Object> getSingletons() {

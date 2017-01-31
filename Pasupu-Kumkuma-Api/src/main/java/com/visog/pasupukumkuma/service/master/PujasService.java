@@ -2,20 +2,20 @@ package com.visog.pasupukumkuma.service.master;
 
 import java.util.List;
 
-import com.visog.pasupukumkuma.req.PujasReq;
-import com.visog.pasupukumkuma.res.PujasRes;
+import com.visog.pasupukumkuma.req.PujaReq;
+import com.visog.pasupukumkuma.res.PujaRes;
 
 
 
 public interface PujasService {
 
-   public void savePujas(PujasReq req);
+   public void savePujas(PujaReq req);
 	
-	public void updatePujas(PujasReq req, String pujasId);
+	public void updatePujas(PujaReq req, String pujasId);
 	
-	public List<PujasRes> getPujas();
+	public List<PujaRes> getPujas();
 	
-	public PujasRes getPujas(String id);
+	public PujaRes getPujas(String id);
 	
 	public Boolean deletePujas(String pujasId);
 	
