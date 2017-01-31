@@ -7,21 +7,19 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
-import com.visog.pasupukumkuma.dao.master.PujasDao;
+import com.visog.pasupukumkuma.dao.master.PujaDao;
 import com.visog.pasupukumkuma.model.master.Puja;
-import com.visog.pasupukumkuma.model.master.Roles;
 import com.visog.pasupukumkuma.req.PujaReq;
 import com.visog.pasupukumkuma.res.PujaRes;
-import com.visog.pasupukumkuma.res.RolesRes;
-import com.visog.pasupukumkuma.service.master.PujasService;
+import com.visog.pasupukumkuma.service.master.PujaService;
 import com.visog.pasupukumkuma.utils.DaoUtils;
 
-public class PujasServiceImpl implements PujasService{
+public class PujaServiceImpl implements PujaService{
 	
-	private static final Logger logger = Logger.getLogger(PujasServiceImpl.class);
+	private static final Logger logger = Logger.getLogger(PujaServiceImpl.class);
 
 	@Inject
-	PujasDao dao;
+	PujaDao dao;
 
 	/**
 	 * This method saves the Pujas

@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
 import com.visog.pasupukumkuma.constants.Status;
 import com.visog.pasupukumkuma.req.PujaReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
-import com.visog.pasupukumkuma.service.master.PujasService;
+import com.visog.pasupukumkuma.service.master.PujaService;
 
 
 @Path("/master")
@@ -29,7 +29,7 @@ public class PujaController {
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private PujasService service;
+	private PujaService service;
 
 	/**
 	 * This method creates the Role

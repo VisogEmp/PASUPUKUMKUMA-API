@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -38,8 +40,10 @@ public class Puja extends AbstractModel{
 	@Column(name="PHOTO")
 	private String photo;
 	
-	//private Status status;
-	
+	/*@ManyToOne
+	@JoinColumn(name="STATUS_ID")
+	private Status status;
+	*/
 
 	@Column(name = "CREATED_BY")
 	private String createdBy;
@@ -55,6 +59,24 @@ public class Puja extends AbstractModel{
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedOn;
 
+	
+	public Integer getPujaCount() {
+		return pujaCount;
+	}
+
+	public void setPujaCount(Integer pujaCount) {
+		this.pujaCount = pujaCount;
+	}
+
+	/*public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+*/
+	
 	public String getId() {
 		return id;
 	}

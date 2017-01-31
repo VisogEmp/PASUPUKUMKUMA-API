@@ -11,15 +11,15 @@ import javax.transaction.Transactional;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.dao.AbstractDao;
-import com.visog.pasupukumkuma.dao.master.PujasDao;
+import com.visog.pasupukumkuma.dao.master.PujaDao;
 import com.visog.pasupukumkuma.model.master.Puja;
 
 
 @Singleton
 @Transactional
-public class PujasDaoImpl  extends AbstractDao implements PujasDao{
+public class PujaDaoImpl  extends AbstractDao implements PujaDao{
 	
-	private static final Logger logger = Logger.getLogger(PujasDaoImpl.class);
+	private static final Logger logger = Logger.getLogger(PujaDaoImpl.class);
 
 	/**
 	 * This method returns the Pujas data

@@ -10,7 +10,28 @@ public class PujaReq {
 	
 	private String duration;
 	
+	private Integer pujaCount;
+	
 	private String photo;
+	
+	private String status;
+
+	
+	public Integer getPujaCount() {
+		return pujaCount;
+	}
+
+	public void setPujaCount(Integer pujaCount) {
+		this.pujaCount = pujaCount;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getName() {
 		return name;

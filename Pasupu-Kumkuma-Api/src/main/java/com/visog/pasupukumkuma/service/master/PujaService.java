@@ -7,7 +7,7 @@ import com.visog.pasupukumkuma.res.PujaRes;
 
 
 
-public interface PujasService {
+public interface PujaService {
 
    public void savePujas(PujaReq req);
 	

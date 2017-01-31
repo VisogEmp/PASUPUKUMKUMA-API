@@ -5,7 +5,7 @@ import java.util.List;
 import com.visog.pasupukumkuma.dao.AbstractDaoI;
 import com.visog.pasupukumkuma.model.master.Puja;
 
-public interface PujasDao extends AbstractDaoI {
+public interface PujaDao extends AbstractDaoI {
 	
 	public List<Puja> getPujas();
 	
