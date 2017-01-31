@@ -1,7 +1,7 @@
 MASTER ROLES:
 =============
 
-1. Create ROLES
+1. Create ROLE
 =====================================
 url : /master/role
 ex url : /master/role
@@ -32,7 +32,7 @@ data :
 
 {
   "name" : "admin", 
-  "description" : " master data descriptionâ€¦..", 
+  "description" : " master data description…..", 
 }
 
 response : 
@@ -60,7 +60,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "role updated sucessfully/ Failed to update role"
 	"data" : [
-		{"id" : 1, "name" : "admin", "description" : " master data descriptionâ€¦â€¦"}, {},...
+		{"id" : 1, "name" : "admin", "description" : " master data description……"}, {},...
 	]
 } 
 
@@ -79,7 +79,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "role updated sucessfully/ Failed to update role"
-	"data" : {"id" : 2, "name" : "admin", "description" : " master data descriptionâ€¦"}
+	"data" : {"id" : 2, "name" : "admin", "description" : " master data description…"}
 	
 } 
 
@@ -115,7 +115,7 @@ data :
 {
   "name" : "male", 
   "code" : "M",
-  "description" : " master descriptionâ€¦", 
+  "description" : " master description…", 
 }
 
 response : 
@@ -166,7 +166,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "gender updated sucessfully/ failed to update gender"
 	"data" : [
-		{"id" : 1, "name" : "male", "code" : "M",  "description" : "master descriptionâ€¦"}, {},...
+		{"id" : 1, "name" : "male", "code" : "M",  "description" : "master description…"}, {},...
 	]
 } 
 
@@ -185,7 +185,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "gender updated sucessfully/ failed to update gender"
-	"data" : {"id" : 2, "name" : "male",  "code" : "M", "description" : " master descriptionâ€¦"}
+	"data" : {"id" : 2, "name" : "male",  "code" : "M", "description" : " master description…"}
 	
 } 
 
@@ -391,7 +391,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "state updated sucessfully/ failed to update state"
-	"data" : {"id" : 2, "name" : "rajasthan", "country_id" :"123" ,  "description" : " master data descriptionâ€¦"}
+	"data" : {"id" : 2, "name" : "rajasthan", "country_id" :"123" ,  "description" : " master data description…"}
 	
 } 
 
@@ -555,7 +555,7 @@ data :
 
 {
   "name" : "tauras", 
-  "description" : " master data descriptionâ€¦..", 
+  "description" : " master data description…..", 
 }
 
 response : 
@@ -583,7 +583,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "rassi updated sucessfully/ Failed to update rassi"
 	"data" : [
-		{"id" : 1, "name" : "admin", "description" : " master data descriptionâ€¦â€¦"}, {},...
+		{"id" : 1, "name" : "admin", "description" : " master data description……"}, {},...
 	]
 } 
 
@@ -602,7 +602,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "rassi updated sucessfully/ Failed to update rassi"
-	"data" : {"id" : 2, "name" : "admin", "description" : " master data descriptionâ€¦"}
+	"data" : {"id" : 2, "name" : "admin", "description" : " master data description…"}
 	
 } 
 
@@ -625,13 +625,13 @@ response :
 	
 } 
 ========================================================================================
-MASTER NAKSHYATRAM:
+MASTER NAKSHATRAM:
 =============
 
-1. Create NAKSHYATRAM
+1. Create NAKSHATRAM
 =====================================
-url : /master/nakshyatram
-ex url : /master/nakshyatram
+url : /master/nakshatram
+ex url : /master/nakshatram
 method : POST
 data : 
 
@@ -645,21 +645,21 @@ response :
 {
 	"statusCode" : 200/300 /500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "nakshyatram Created sucessfully/ Failed to create nakshyatram"
+	"statusDesc" : "nakshatram Created sucessfully/ Failed to create nakshatram"
 	"data" : null
 } 
 
-2 Edit  NAKSHYATRAM
+2 Edit  NAKSHATRAM
 =====================================
-url : /master/nakshyatram/<NAKSHYATRAM_ID>
-ex url : /master/nakshyatram/2
+url : /master/nakshatram/<NAKSHATRAM_ID>
+ex url : /master/nakshatram/2
 
 method : PUT
 data : 
 
 {
   "name" : "ashwini", 
-  "description" : " master data descriptionâ€¦..", 
+  "description" : " master data description…..", 
 }
 
 response : 
@@ -667,14 +667,14 @@ response :
 {
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "nakshyatram updated sucessfully/ Failed to update nakshyatram"
+	"statusDesc" : "nakshatram updated sucessfully/ Failed to update nakshatram"
 	"data" : null
 } 
 
-3. Get All NAKSHYATRAM
+3. Get All NAKSHATRAM
 =====================================
-url : /master/nakshyatram
-ex url : /master/nakshyatram
+url : /master/nakshatram
+ex url : /master/nakshatram
 
 method : GET
 data : 
@@ -685,16 +685,16 @@ response :
 {
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "nakshyatram updated sucessfully/ Failed to update nakshyatram"
+	"statusDesc" : "nakshatram updated sucessfully/ Failed to update nakshatram"
 	"data" : [
-		{"id" : 1, "name" : "ashwini", "description" : " master data descriptionâ€¦â€¦"}, {},...
+		{"id" : 1, "name" : "ashwini", "description" : " master data description……"}, {},...
 	]
 } 
 
-4. Get NAKSHYATRAM
+4. Get NAKSHATRAM
 =====================================
-url : /master/nakshyatram/<NAKSHYATRAM_ID>
-ex url : /master/nakshyatram/2
+url : /master/nakshatram/<NAKSHATRAM_ID>
+ex url : /master/nakshatram/2
 
 method : GET
 data : 
@@ -705,15 +705,15 @@ response :
 {
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "nakshyatram updated sucessfully/ Failed to update nakshyatram"
-	"data" : {"id" : 2, "name" : "ashwini", "description" : " master data descriptionâ€¦"}
+	"statusDesc" : "nakshatram updated sucessfully/ Failed to update nakshatram"
+	"data" : {"id" : 2, "name" : "ashwini", "description" : " master data description…"}
 	
 } 
 
-5. Delete NAKSHYATRAM
+5. Delete NAKSHATRAM
 =====================================
-url : /master/nakshyatram/<NAKSHYATRAM_ID>
-ex url : /master/nakshyatram/2
+url : /master/nakshatram/<NAKSHATRAM_ID>
+ex url : /master/nakshatram/2
 
 method : DELETE
 data : 
@@ -724,7 +724,7 @@ response :
 {
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "nakshyatram deleted sucessfully/ failed to update nakshyatram"
+	"statusDesc" : "nakshatram deleted sucessfully/ failed to update nakshatram"
 	"data" : NULL
 	
 } 
@@ -761,7 +761,7 @@ data :
 
 {
   "name" : "error", 
-  "description" : " master data descriptionâ€¦..", 
+  "description" : " master data description…..", 
   "code" :"E",
 }
 
@@ -790,7 +790,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "status updated sucessfully/ failed to update status"
 	"data" : [
-		{"id" : 1, "name" : "error","code" :"E", "description" : " master data descriptionâ€¦â€¦"}, {},...
+		{"id" : 1, "name" : "error","code" :"E", "description" : " master data description……"}, {},...
 	]
 } 
 
@@ -809,7 +809,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "status updated sucessfully/ failed to update status"
-	"data" : {"id" : 2, "name" : "error","code" :"E", "description" : " master data descriptionâ€¦"}
+	"data" : {"id" : 2, "name" : "error","code" :"E", "description" : " master data description…"}
 	
 } 
 
@@ -845,6 +845,8 @@ data :
    "price" :"100",
    "duration" : "2 hours",
    "photo" : "c/fileserver/ganesh",
+   "puja_count" :"10",
+   "status" : "1120"
    
 }
 
@@ -870,7 +872,9 @@ data :
   "description" : "master data description..",
    "price" :"100",
    "duration" : "2 hours",
-   "photo" : "c/fileserver/ganesh"
+   "photo" : "c/fileserver/ganesh",
+   "puja_count" :"10",
+   "status" : "1120"
 }
 
 response : 
@@ -899,7 +903,7 @@ response :
 	"statusDesc" : "puja updated sucessfully/ Failed to update puja"
 	"data" : [
 		{"id" : 1, "name" : "ganesh puja", "description" : "master data description..","price" :"100","duration" : "2 hours",
-   "photo" : "c/fileserver/ganesh"}, {},...
+   "photo" : "c/fileserver/ganesh","puja_count" :"10", "status" : "1120"}, {},...
 	]
 } 
 
@@ -919,7 +923,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "puja updated sucessfully/ Failed to update puja"
 	"data" : {"id" : 1, "name" : "ganesh puja", "description" : "master data description..","price" :"100","duration" : "2 hours",
-   "photo" : "c/fileserver/ganesh"}
+   "photo" : "c/fileserver/ganesh","puja_count" :"10", "status" : "1120"}
 	
 } 
 
@@ -942,111 +946,7 @@ response :
 	
 } 
 ================================================================================
-1. Create PUJA
-=====================================
-url : /master/puja
-ex url : /master/puja
-method : POST
-data : 
-
-{
-  "name" : "coconot", 
-  "description" : "master data description..",
-   "price" :"100",
-   "duration" : "2 hours",
-   cou
-   "photo" : "c//fileserver/coconut"
-}
-
-response : 
-
-{
-	"statusCode" : 200/300 /500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja Created sucessfully/ Failed to create puja"
-	"data" : null
-} 
-
-2 Edit  PUJA
-=====================================
-url : /master/puja/<PUJA_ID>
-ex url : /master/puja/2
-
-method : PUT
-data : 
-
-{
-  "name" : "admin", 
-  "description" : " master data descriptionâ€¦..", 
-}
-
-response : 
-
-{
-	"statusCode" : 200/300/500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja updated sucessfully/ Failed to update puja"
-	"data" : null
-} 
-
-3. Get All PUJA
-=====================================
-url : /master/puja
-ex url : /master/puja
-
-method : GET
-data : 
-
-
-response : 
-
-{
-	"statusCode" : 200/300/500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja updated sucessfully/ Failed to update puja"
-	"data" : [
-		{"id" : 1, "name" : "admin", "description" : " master data descriptionâ€¦â€¦"}, {},...
-	]
-} 
-
-4. Get PUJA
-=====================================
-url : /master/puja/<PUJA_ID>
-ex url : /master/puja/2
-
-method : GET
-data : 
-
-
-response : 
-
-{
-	"statusCode" : 200/300/500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja updated sucessfully/ Failed to update puja"
-	"data" : {"id" : 2, "name" : "admin", "description" : " master data descriptionâ€¦"}
-	
-} 
-
-5. Delete PUJA
-=====================================
-url : /master/puja/<PUJA_ID>
-ex url : /master/puja/2
-
-method : DELETE
-data : 
-
-
-response : 
-
-{
-	"statusCode" : 200/300/500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja deleted sucessfully/ failed to update puja"
-	"data" : NULL
-	
-} 
-================================================================================
+============================================================================
 1. Create PUJA_SAMAGRI
 =====================================
 url : /master/puja_samagri
@@ -1059,7 +959,9 @@ data :
   "description" : "master data description..",
    "price" :"100",
    "duration" : "2 hours",
-   "photo" : "c//fileserver/coconut"
+   "photo" : "c//fileserver/coconut",
+    "samagri_count" : "123",
+   "status" : " 009"
 }
 
 response : 
@@ -1083,7 +985,9 @@ data :
   "description" : "master data description..",
    "price" :"100",
    "duration" : "2 hours",
-   "photo" : "c/fileserver/coconut"
+   "photo" : "c/fileserver/coconut",
+   "samagri_count" : "123",
+   "status" : " 009"
 }
 
 response : 
@@ -1112,7 +1016,7 @@ response :
 	"statusDesc" : "puja samagri updated sucessfully/ Failed to update puja samagri"
 	"data" : [
 		{"id" : 1 ,"name" : "coconot","description" : "master data description..", "price" :"100", "duration" : "2 hours",
-   "photo" : "c/fileserver/coconut"}, {},...
+   "photo" : "c/fileserver/coconut", "samagri_count" : "123","status" : " 009"}, {},...
 	]
 } 
 
@@ -1132,7 +1036,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "puja samagri updated sucessfully/ Failed to update puja samagri"
 	"data" : {"id" : 1 ,"name" : "coconot","description" : "master data description..", "price" :"100", "duration" : "2 hours",
-   "photo" : "c/fileserver/coconut"}
+   "photo" : "c/fileserver/coconut", "samagri_count" : "123","status" : " 009"}
 	
 } 
 
@@ -1261,10 +1165,10 @@ response :
 } 
 ========================================================================================
 
-MASTER COUPAN_TYPE:
+MASTER COUPON_TYPE:
 =============
 
-1. Create COUPAN_TYPE
+1. Create COUPON_TYPE
 =====================================
 url : /master/coupan_type
 ex url : /master/coupan_type
@@ -1285,9 +1189,9 @@ response :
 	"data" : null
 } 
 
-2 Edit  COUPAN_TYPE
+2 Edit  COUPON_TYPE
 =====================================
-url : /master/coupan_type/<COUPAN_TYPE_ID>
+url : /master/coupan_type/<COUPON_TYPE_ID>
 ex url : /master/coupan_type/2
 
 method : PUT
@@ -1295,7 +1199,7 @@ data :
 
 {
   "name" : "reffered", 
-  "description" : " master data descriptionâ€¦..", 
+  "description" : " master data description…..", 
 }
 
 response : 
@@ -1307,7 +1211,7 @@ response :
 	"data" : null
 } 
 
-3. Get All COUPAN_TYPE
+3. Get All COUPON_TYPE
 =====================================
 url : /master/coupan_type
 ex url : /master/coupan_type
@@ -1323,13 +1227,13 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "coupan type  updated sucessfully/ Failed to update coupan type "
 	"data" : [
-		{"id" : 1, "name" : "reffered", "description" : " master data descriptionâ€¦â€¦"}, {},...
+		{"id" : 1, "name" : "reffered", "description" : " master data description……"}, {},...
 	]
 } 
 
-4. Get COUPAN_TYPE
+4. Get COUPON_TYPE
 =====================================
-url : /master/coupan_type/<COUPAN_TYPE_ID>
+url : /master/coupan_type/<COUPON_TYPE_ID>
 ex url : /master/coupan_type/2
 
 method : GET
@@ -1342,13 +1246,13 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "coupan type  updated sucessfully/ Failed to update coupan type "
-	"data" : {"id" : 2, "name" : "reffered", "description" : " master data descriptionâ€¦"}
+	"data" : {"id" : 2, "name" : "reffered", "description" : " master data description…"}
 	
 } 
 
-5. Delete COUPAN_TYPE
+5. Delete COUPON_TYPE
 =====================================
-url : /master/coupan_type/<COUPAN_TYPE_ID>
+url : /master/coupan_type/<COUPON_TYPE_ID>
 ex url : /master/coupan_type/2
 
 method : DELETE

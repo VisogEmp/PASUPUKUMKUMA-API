@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.dao.master.CityDao;
 import com.visog.pasupukumkuma.model.master.City;
-import com.visog.pasupukumkuma.model.master.Country;
+import com.visog.pasupukumkuma.model.master.State;
 import com.visog.pasupukumkuma.req.CityReq;
 import com.visog.pasupukumkuma.res.CityRes;
 import com.visog.pasupukumkuma.service.master.CityService;
@@ -28,10 +28,11 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 
 		City cites = new City();
 		cites.setName(req.getName());
+		cites.setCountry(req.getCountry());
 
-		Country country = new Country();
-		country.setId(req.getCountry());
-		cites.setCity(country);
+		City city = new City();
+		city.setId(req.getState());
+		
 		DaoUtils.setEntityCreateAuditColumns(cites);
 
 		if (dao.isCityExists(req.getName())) {
@@ -63,17 +64,17 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 
 			cites.setName(req.getName());
 
-			Country country = new Country();
-			country.setId(req.getCountry());
+			State state = new State();
+			state.setId(req.getState());
 
-			cites.setCountry(country);
+			cites.setState(state);
 
 			dao.update(cites);
 			logger.info("state updated successfully : " + cites.getId());
 			return true;
 
 		} else {
-			logger.info("states already exist : " + states.getId());
+			logger.info("states already exist : " + cites.getId());
 			return false;
 
 		}
@@ -85,16 +86,16 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 	 */
 
 	public List<CityRes> getCity() {
-		List<City> states = dao.getCity();
+		List<City> cites = dao.getCity();
 
 		List<CityRes> stateList = new ArrayList<>();
 		CityRes cityRes = null;
 
-		for (City state : states) {
+		for (City city : cites) {
 			cityRes = new CityRes();
-			cityRes.setId(state.getId());
-			cityRes.setName(state.getName());
-			cityRes.setCountry(state.getCountry().getId());
+			cityRes.setId(city.getId());
+			cityRes.setName(city.getName());
+			cityRes.setState(city.getState().getId());
 			stateList.add(cityRes);
 		}
 
@@ -112,7 +113,7 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 		CityRes cityRes = new CityRes();
 		cityRes.setId(states.getId());
 		cityRes.setName(states.getName());
-		cityRes.setCountry(states.getCountry().getId());
+		cityRes.setState(states.getState().getId());
 		return cityRes;
 	}
 

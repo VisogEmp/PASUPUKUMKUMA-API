@@ -4,7 +4,7 @@ public class CityReq {
 
 	private String name;
 
-	private String stateid;
+	private String state;
 	
 	private String country;
 
@@ -16,12 +16,14 @@ public class CityReq {
 		this.name = name;
 	}
 
-	public String getStateid() {
-		return stateid;
+	
+
+	public String getState() {
+		return state;
 	}
 
-	public void setStateid(String stateid) {
-		this.stateid = stateid;
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public String getCountry() {

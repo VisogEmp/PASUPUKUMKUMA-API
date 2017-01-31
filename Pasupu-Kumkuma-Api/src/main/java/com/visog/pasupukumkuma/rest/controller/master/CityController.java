@@ -51,7 +51,7 @@ public class CityController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/city/{CITY_ID}")
-	public PasupuKumkumaResponse updateRole(@PathParam("cityid") String cityid, CityReq req) {
+	public PasupuKumkumaResponse updateRole(@PathParam("CITY_ID") String cityid, CityReq req) {
 
 		service.updateCity(req, cityid);
 
@@ -79,11 +79,11 @@ public class CityController {
 	}
 
 	@GET
-	@Path("/state/{CITY_ID}")
-	public PasupuKumkumaResponse getRole(@PathParam("stateId") String stateId) {
+	@Path("/city/{CITY_ID}")
+	public PasupuKumkumaResponse getRole(@PathParam("CITY_ID") String cityId) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getCity(stateId));
+		pasupuKumkumaResponse.setData(service.getCity(cityId));
 		pasupuKumkumaResponse.setMessage("state fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
@@ -93,12 +93,12 @@ public class CityController {
 	}
 	
 	@DELETE
-	@Path("/state/{CITY_ID}")
-	public PasupuKumkumaResponse deleteRole(@PathParam("stateId") String stateId) {
+	@Path("/city/{CITY_ID}")
+	public PasupuKumkumaResponse deleteRole(@PathParam("CITY_ID") String cityId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
-		if(service.deleteCity(stateId)) {
+		if(service.deleteCity(cityId)) {
 			pasupuKumkumaResponse.setMessage("state deleted succcessfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);

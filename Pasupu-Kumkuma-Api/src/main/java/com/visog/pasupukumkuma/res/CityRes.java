@@ -32,5 +32,8 @@ public class CityRes {
 		this.state = state;
 	}
 
+	
+
+	
 }
 
