@@ -7,17 +7,12 @@ import javax.ws.rs.core.Application;
 
 import com.visog.pasupukumkuma.rest.controller.AdminController;
 import com.visog.pasupukumkuma.rest.controller.SuperAdminController;
+import com.visog.pasupukumkuma.rest.controller.master.CityController;
 import com.visog.pasupukumkuma.rest.controller.master.CountryController;
 import com.visog.pasupukumkuma.rest.controller.master.PujaController;
 import com.visog.pasupukumkuma.rest.controller.master.PujaSamagriController;
 import com.visog.pasupukumkuma.rest.controller.master.RolesController;
-<<<<<<< HEAD
 import com.visog.pasupukumkuma.rest.controller.master.StateController;
-import com.visog.pasupukumkuma.rest.controller.master.StudentController;
-=======
->>>>>>> branch 'master' of https://github.com/VisogEmp/PASUPUKUMKUMA-API.git
-
-
 
 public class PasupuKumkumaRestApplication extends Application {
 	
@@ -29,12 +24,10 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(SuperAdminController.class);
 		classes.add(RolesController.class);
 		classes.add(CountryController.class);
-<<<<<<< HEAD
 		classes.add(StateController.class);
-=======
+		classes.add(CityController.class);
 		classes.add(PujaController.class);
 		classes.add(PujaSamagriController.class);
->>>>>>> branch 'master' of https://github.com/VisogEmp/PASUPUKUMKUMA-API.git
 	}
 
 	public Set<Object> getSingletons() {
