@@ -33,6 +33,8 @@ public class PujaServiceImpl implements PujaService{
 		pujas.setPrice(req.getPrice());
 		pujas.setDuration(req.getDuration());
 		pujas.setPhoto(req.getPhoto());
+		pujas.setPujaCount(req.getPujaCount());
+		//pujas.setStatus(req.getStatus());
 		
 
 		DaoUtils.setEntityCreateAuditColumns(pujas);
@@ -54,6 +56,8 @@ public class PujaServiceImpl implements PujaService{
 		pujas.setPrice(req.getPrice());
 		pujas.setDuration(req.getDuration());
 		pujas.setPhoto(req.getPhoto());
+		pujas.setPujaCount(req.getPujaCount());
+		//pujas.setStatus(req.getStatus());
 		
 
 		dao.update(pujas);
@@ -76,6 +80,8 @@ public class PujaServiceImpl implements PujaService{
 			pujasRes.setPrice(puja.getPrice());
 			pujasRes.setDuration(puja.getDuration());
 			pujasRes.setPhoto(puja.getPhoto());
+			pujasRes.setPujaCount(puja.getPujaCount());
+			//pujasRes.setStatus(puja.getStatus());
 			
 			
 			pujasList.add(pujasRes);
@@ -98,6 +104,9 @@ public class PujaServiceImpl implements PujaService{
 		pujaRes.setDescription(puja.getDescription());
 		pujaRes.setPrice(puja.getPrice());
 		pujaRes.setDuration(puja.getDuration());
+		pujaRes.setPhoto(puja.getPhoto());
+		pujaRes.setPujaCount(puja.getPujaCount());
+		//pujaRes.setStatus(puja.getStatus());
 		return pujaRes;
 	}
 	
