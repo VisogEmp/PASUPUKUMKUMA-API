@@ -39,8 +39,6 @@ public class PujaSamagri extends AbstractModel {
 	@Column(name="SAMAGRI_COUNT")
 	private Integer samagri_count;
 	
-	
-	
 	/*@ManyToOne
 	@JoinColumn(name="STATUS_ID")
     private Status status;*/
