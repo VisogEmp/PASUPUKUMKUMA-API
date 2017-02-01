@@ -53,7 +53,7 @@ public class StatusController {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/status/{statusId")
+	@Path("/status/{STATUS_ID")
 	public PasupuKumkumaResponse updateStatus(@PathParam("statusId") String statusId, StatusReq req) {
 
 		service.updateStatus(req, statusId);
@@ -93,7 +93,7 @@ public class StatusController {
 	 */
 
 	@GET
-	@Path("/status/{statusId}")
+	@Path("/status/{STATUS_ID}")
 	public PasupuKumkumaResponse getStatus(@PathParam("statusId") String statusId) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
@@ -113,7 +113,7 @@ public class StatusController {
 	 */
 	
 	@DELETE
-	@Path("/status/{statusId}")
+	@Path("/status/{STATUS_ID}")
 	public PasupuKumkumaResponse deleteRole(@PathParam("statusId") String statusId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
