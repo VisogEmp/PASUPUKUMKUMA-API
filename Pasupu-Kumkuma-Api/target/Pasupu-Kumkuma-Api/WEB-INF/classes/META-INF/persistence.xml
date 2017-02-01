@@ -9,9 +9,9 @@
 		<jta-data-source>pasupukumkumaDB</jta-data-source>
 		
 		    <class>com.visog.pasupukumkuma.model.master.Roles</class>
-		    <class>com.visog.pasupukumkuma.model.master.Manager</class>
-			<class>com.visog.pasupukumkuma.model.master.Student</class>
 			<class>com.visog.pasupukumkuma.model.master.Country</class>
+			<class>com.visog.pasupukumkuma.model.master.Puja</class>
+			
 			
 	
 		

@@ -92,8 +92,8 @@ public class CountryController {
 	}
 	
 	@DELETE
-	@Path("/country/{countryId}")
-	public PasupuKumkumaResponse deleteRole(@PathParam("countryId") String countryId) {
+	@Path("/country/{COUNTRY_ID}")
+	public PasupuKumkumaResponse deleteRosle(@PathParam("COUNTRY_ID") String countryId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
