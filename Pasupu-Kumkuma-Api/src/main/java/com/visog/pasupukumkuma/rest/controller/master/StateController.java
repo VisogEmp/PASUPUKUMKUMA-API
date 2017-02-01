@@ -49,8 +49,8 @@ public class StateController {
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/state/{stateId}")
-	public PasupuKumkumaResponse updateRole(@PathParam("stateId") String stateId, StateReq req) {
+	@Path("/state/{STATE_ID}")
+	public PasupuKumkumaResponse updateRole(@PathParam("STATE_ID") String stateId, StateReq req) {
 
 		service.updateState(req, stateId);
 
@@ -93,7 +93,7 @@ public class StateController {
 	
 	@DELETE
 	@Path("/state/{STATE_ID}")
-	public PasupuKumkumaResponse deleteRole(@PathParam("stateId") String stateId) {
+	public PasupuKumkumaResponse deleteRole(@PathParam("STATE_ID") String stateId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 

@@ -108,12 +108,12 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 
 	public CityRes getCity(String id) {
 
-		City states = (City) dao.getByKey(City.class, id);
+		City cites = (City) dao.getByKey(City.class, id);
 
 		CityRes cityRes = new CityRes();
-		cityRes.setId(states.getId());
-		cityRes.setName(states.getName());
-		cityRes.setState(states.getState().getId());
+		cityRes.setId(cites.getId());
+		cityRes.setName(cites.getName());
+		cityRes.setState(cites.getState().getId());
 		return cityRes;
 	}
 

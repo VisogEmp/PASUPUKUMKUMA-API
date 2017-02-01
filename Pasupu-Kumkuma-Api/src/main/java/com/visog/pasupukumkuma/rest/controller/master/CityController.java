@@ -35,7 +35,7 @@ public class CityController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/city")
-	public PasupuKumkumaResponse createState(CityReq req) {
+	public PasupuKumkumaResponse createCity(CityReq req) {
 
 		service.saveCity(req);
 
@@ -51,7 +51,7 @@ public class CityController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/city/{CITY_ID}")
-	public PasupuKumkumaResponse updateRole(@PathParam("CITY_ID") String cityid, CityReq req) {
+	public PasupuKumkumaResponse updateCity(@PathParam("CITY_ID") String cityid, CityReq req) {
 
 		service.updateCity(req, cityid);
 
@@ -80,7 +80,7 @@ public class CityController {
 
 	@GET
 	@Path("/city/{CITY_ID}")
-	public PasupuKumkumaResponse getRole(@PathParam("CITY_ID") String cityId) {
+	public PasupuKumkumaResponse getCity(@PathParam("CITY_ID") String cityId) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getCity(cityId));
@@ -94,7 +94,7 @@ public class CityController {
 	
 	@DELETE
 	@Path("/city/{CITY_ID}")
-	public PasupuKumkumaResponse deleteRole(@PathParam("CITY_ID") String cityId) {
+	public PasupuKumkumaResponse deleteCity(@PathParam("CITY_ID") String cityId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
@@ -111,8 +111,5 @@ public class CityController {
 
 		return pasupuKumkumaResponse;
 	
-	
-	}
-
-	
+	}	
 }
