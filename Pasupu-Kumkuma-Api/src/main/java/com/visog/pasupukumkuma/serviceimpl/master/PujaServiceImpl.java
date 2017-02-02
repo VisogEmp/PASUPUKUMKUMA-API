@@ -8,9 +8,13 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.dao.master.PujaDao;
+import com.visog.pasupukumkuma.model.master.Country;
 import com.visog.pasupukumkuma.model.master.Puja;
+import com.visog.pasupukumkuma.model.master.State;
+import com.visog.pasupukumkuma.model.master.Status;
 import com.visog.pasupukumkuma.req.PujaReq;
 import com.visog.pasupukumkuma.res.PujaRes;
+import com.visog.pasupukumkuma.res.StateRes;
 import com.visog.pasupukumkuma.service.master.PujaService;
 import com.visog.pasupukumkuma.utils.DaoUtils;
 
@@ -20,84 +24,117 @@ public class PujaServiceImpl implements PujaService{
 
 	@Inject
 	PujaDao dao;
-
+	
 	/**
-	 * This method saves the Pujas
+	 * This method saves the Puja
 	 */
 
-	public void savePujas(PujaReq req) {
+	public Boolean savePuja(PujaReq req) {
 		
-		Puja pujas = new Puja();
-		pujas.setName(req.getName());
-		pujas.setDescription(req.getDescription());
-		pujas.setPrice(req.getPrice());
-		pujas.setDuration(req.getDuration());
-		pujas.setPhoto(req.getPhoto());
-		pujas.setPujaCount(req.getPujaCount());
-		//pujas.setStatus(req.getStatus());
-		
+		Puja puja = new Puja();
+		puja.setName(req.getName());
+		puja.setDescription(req.getDescription());
+		puja.setPrice(req.getPrice());
+		puja.setDuration(req.getDuration());
+		puja.setPhoto(req.getPhoto());
+		puja.setPujaCount(req.getPujaCount());
+        
+		Status status = new Status();
+		status.setId(req.getStatus());
+		puja.setStatus(status);
+		DaoUtils.setEntityCreateAuditColumns(puja);
 
-		DaoUtils.setEntityCreateAuditColumns(pujas);
-		
-		dao.save(pujas);
+		if (dao.isPujaExists(req.getName())) {
 
-		logger.info("Pujas created successfully : " + pujas.getId());
-		
-	}
+			logger.info("puja already exist : " + puja.getId());
+			return false;
 
-	/**
-	 * This method updates the Pujas
-	 */
-	public void updatePujas(PujaReq req, String pujasId) {
-		
-		Puja pujas = (Puja) dao.getByKey(Puja.class, pujasId);
-		pujas.setName(req.getName());
-		pujas.setDescription(req.getDescription());
-		pujas.setPrice(req.getPrice());
-		pujas.setDuration(req.getDuration());
-		pujas.setPhoto(req.getPhoto());
-		pujas.setPujaCount(req.getPujaCount());
-		//pujas.setStatus(req.getStatus());
-		
+		} else {
+			dao.save(puja);
 
-		dao.update(pujas);
-		logger.info("Pujas updated successfully : " + pujas.getId());
-		
-	}
+			logger.info("puja created successfully : " + puja.getId());
+			return true;
 
-	public List<PujaRes> getPujas() {
-		
-		List<Puja> pujas = dao.getPujas();
-
-		List<PujaRes> pujasList = new ArrayList<>();
-		PujaRes pujasRes = null;
-
-		for (Puja puja : pujas) {
-			pujasRes = new PujaRes();
-			pujasRes.setId(puja.getId());
-			pujasRes.setName(puja.getName());
-			pujasRes.setDescription(puja.getDescription());
-			pujasRes.setPrice(puja.getPrice());
-			pujasRes.setDuration(puja.getDuration());
-			pujasRes.setPhoto(puja.getPhoto());
-			pujasRes.setPujaCount(puja.getPujaCount());
-			//pujasRes.setStatus(puja.getStatus());
-			
-			
-			pujasList.add(pujasRes);
 		}
 
-		return pujasList;
+	
+	}
+	
+	/**
+	 * This method updates the puja
+	 */
+
+	public Boolean updatePuja(PujaReq req, String pujaId) {
+		
+		Puja puja = (Puja) dao.getByKey(Puja.class, pujaId);
+		logger.info("puja exist : " + puja.getName().toLowerCase().trim());
+		logger.info("puja new : " + req.getName().toLowerCase().trim());
+
+		if (puja.getName().toLowerCase().trim().equals(req.getName().toLowerCase().trim())
+				|| (!dao.isPujaExists(req.getName()))) {
+
+			puja.setName(req.getName());
+			puja.setDescription(req.getDescription());
+			puja.setPrice(req.getPrice());
+			puja.setDuration(req.getDuration());
+			puja.setPhoto(req.getPhoto());
+			puja.setPujaCount(req.getPujaCount());
+			
+            Status status = new Status();
+            status.setId(req.getStatus());
+
+			puja.setStatus(status);
+
+			dao.update(puja);
+			logger.info("puja updated successfully : " + puja.getId());
+			return true;
+
+		} else {
+			logger.info("puja already exist : " + puja.getId());
+			return false;
+
+		}
+
+		
 		
 	}
 	
 	/**
-	 * This method returns Pujas Details for the given puja id  
+	 * This method returns all the puja
 	 */
 
-	public PujaRes getPujas(String id) {
+	public List<PujaRes> getPuja() {
+		
+		List<Puja> pujas = dao.getPujas();
+
+		List<PujaRes> pujaList = new ArrayList<>();
+		PujaRes pujaRes = null;
+
+		for (Puja puja : pujas) {
+			pujaRes = new PujaRes();
+			pujaRes.setId(puja.getId());
+			pujaRes.setName(puja.getName());
+			pujaRes.setDescription(puja.getDescription());
+			pujaRes.setPrice(puja.getPrice());
+			pujaRes.setDuration(puja.getDuration());
+			pujaRes.setPhoto(puja.getPhoto());
+			pujaRes.setPujaCount(puja.getPujaCount());
+		    pujaRes.setStatus(puja.getStatus().getId());
+			pujaList.add(pujaRes);
+		}
+
+		return pujaList;
+		
+	}
+	
+	/**
+	 * This method returns Puja Details for the given puja id
+	 */
+
+	public PujaRes getPuja(String id) {
 		
 		Puja puja = (Puja) dao.getByKey(Puja.class, id);
+
 		PujaRes pujaRes = new PujaRes();
 		pujaRes.setId(puja.getId());
 		pujaRes.setName(puja.getName());
@@ -106,18 +143,22 @@ public class PujaServiceImpl implements PujaService{
 		pujaRes.setDuration(puja.getDuration());
 		pujaRes.setPhoto(puja.getPhoto());
 		pujaRes.setPujaCount(puja.getPujaCount());
-		//pujaRes.setStatus(puja.getStatus());
+		pujaRes.setStatus(puja.getStatus().getId());
 		return pujaRes;
+		
 	}
 	
 	/**
-	 * This method deletes the given puja  
+	 * This method deletes the given puja
 	 */
 
-	public Boolean deletePujas(String pujasId) {
-		return (dao.delete(Puja.class, pujasId) != 0);
+	public Boolean deletePuja(String pujaId) {
+		
+		return (dao.delete(Puja.class, pujaId) != 0);
 	}
+
 	
+
 	
 
 }

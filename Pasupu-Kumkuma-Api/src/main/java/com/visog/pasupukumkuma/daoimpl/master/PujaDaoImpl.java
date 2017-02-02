@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import com.visog.pasupukumkuma.dao.AbstractDao;
 import com.visog.pasupukumkuma.dao.master.PujaDao;
 import com.visog.pasupukumkuma.model.master.Puja;
+import com.visog.pasupukumkuma.model.master.State;
 
 
 @Singleton
@@ -34,5 +35,18 @@ public class PujaDaoImpl  extends AbstractDao implements PujaDao{
 		return em.createQuery(q).getResultList();
 		
 	}
+
+	public Boolean isPujaExists(String name) {
+		
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Long> q = cb.createQuery(Long.class);
+		Root<Puja> c = q.from(Puja.class);
+		q.where(cb.equal(cb.lower(c.get("name")), name.toLowerCase()));
+		q.select(cb.count(c));
+		return (em.createQuery(q).getSingleResult() != 0L);
+
+	}
+	
+	
 
 }

@@ -9,6 +9,8 @@ public interface PujaDao extends AbstractDaoI {
 	
 	public List<Puja> getPujas();
 	
+	public Boolean isPujaExists(String name);
+	
 	
 
 }

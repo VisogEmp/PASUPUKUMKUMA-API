@@ -12,11 +12,11 @@ public class PujaRes {
 	
 	private String duration;
 	
-	private Integer pujaCount;
-	
 	private String photo;
 	
-	private String status;
+	private Integer pujaCount;
+	
+    private String status;
 
 	public Integer getPujaCount() {
 		return pujaCount;

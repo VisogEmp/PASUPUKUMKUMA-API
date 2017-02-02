@@ -33,17 +33,17 @@ public class Puja extends AbstractModel{
 	@Column(name="DURATION")
 	private String duration;
 	
-	@Column(name="PUJA_COUNT")
-	private Integer pujaCount;
-	
-	
 	@Column(name="PHOTO")
 	private String photo;
 	
-	/*@ManyToOne
+	
+	@Column(name="PUJA_COUNT")
+	private Integer pujaCount;
+	
+	@ManyToOne
 	@JoinColumn(name="STATUS_ID")
 	private Status status;
-	*/
+	
 
 	@Column(name = "CREATED_BY")
 	private String createdBy;
@@ -68,14 +68,14 @@ public class Puja extends AbstractModel{
 		this.pujaCount = pujaCount;
 	}
 
-	/*public Status getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-*/
+
 	
 	public String getId() {
 		return id;
