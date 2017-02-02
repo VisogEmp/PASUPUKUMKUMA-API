@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
@@ -27,12 +29,14 @@ public class CouponType extends AbstractModel {
 	private String createdBy;
 
 	@Column(name = "CREATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdOn;
 
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
 
 	@Column(name = "UPDATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedOn;
 
 	public String getId() {
