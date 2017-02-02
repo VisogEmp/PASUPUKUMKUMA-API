@@ -41,7 +41,7 @@ public class StatusRes {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	
 
 }

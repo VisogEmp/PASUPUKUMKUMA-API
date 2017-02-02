@@ -38,9 +38,13 @@ public class StatusServiceImpl implements StatusService {
 	public void updateStatus(StatusReq req, String statusId) {
 
 		Status status = (Status) dao.getByKey(Status.class, statusId);
+		
+		
 		status.setCode(req.getCode());
 		status.setName(req.getName());
 		status.setDescription(req.getDescription());
+
+		DaoUtils.setEntityUpdateAuditColumns(status);
 		dao.update(status);
 		logger.info("Status updated successfully : " + status.getId());
 	}
@@ -55,8 +59,8 @@ public class StatusServiceImpl implements StatusService {
 		for (Status statuss : status) {
 			statusRes = new StatusRes();
 			statusRes.setId(statuss.getId());
-
-			statusRes.setName(statuss.getName());
+            statusRes.setName(statuss.getName());
+            statusRes.setCode(statuss.getCode());
 			statusRes.setDescription(statuss.getDescription());
 			statusList.add(statusRes);
 		}

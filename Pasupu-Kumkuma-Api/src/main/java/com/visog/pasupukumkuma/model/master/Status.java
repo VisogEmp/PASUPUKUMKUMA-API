@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
@@ -30,13 +32,16 @@ public class Status extends AbstractModel {
 	private String createdBy;
 
 	@Column(name = "CREATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdOn;
 
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
 
 	@Column(name = "UPDATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedOn;
+
 
 	public String getId() {
 		return id;
@@ -70,28 +75,12 @@ public class Status extends AbstractModel {
 		this.description = description;
 	}
 
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
 	public Date getCreatedOn() {
 		return createdOn;
 	}
 
 	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
-	}
-
-	public String getUpdatedBy() {
-		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
 	}
 
 	public Date getUpdatedOn() {
@@ -102,4 +91,23 @@ public class Status extends AbstractModel {
 		this.updatedOn = updatedOn;
 	}
 
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	
 }

@@ -1,5 +1,6 @@
 package com.visog.pasupukumkuma.rest.controller.master;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.CookieParam;
 import javax.ws.rs.DELETE;
@@ -14,7 +15,6 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.constants.Status;
-import com.visog.pasupukumkuma.req.RolesReq;
 import com.visog.pasupukumkuma.req.StatusReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
 import com.visog.pasupukumkuma.service.master.StatusService;
@@ -26,9 +26,16 @@ public class StatusController {
 	private static final Logger logger = Logger.getLogger(StatusController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
-	
+
+	@Inject
 	private StatusService service;
-	
+
+	/**
+	 * This method creates the Role
+	 * 
+	 * @param req
+	 * @return
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/status")
@@ -46,15 +53,15 @@ public class StatusController {
 	}
 
 	/**
-	 * This method updates the Role
+	 * This method updates the status
 	 * 
 	 * @param req
 	 * @return
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/status/{STATUS_ID")
-	public PasupuKumkumaResponse updateStatus(@PathParam("statusId") String statusId, StatusReq req) {
+	@Path("/status/{STATUS_ID}")
+	public PasupuKumkumaResponse updateStatus(@PathParam("STATUS_ID") String statusId, StatusReq req) {
 
 		service.updateStatus(req, statusId);
 
@@ -74,7 +81,7 @@ public class StatusController {
 	 */
 	@GET
 	@Path("/status")
-	public PasupuKumkumaResponse getRoles() {
+	public PasupuKumkumaResponse getStatus() {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getStatus());
@@ -94,7 +101,7 @@ public class StatusController {
 
 	@GET
 	@Path("/status/{STATUS_ID}")
-	public PasupuKumkumaResponse getStatus(@PathParam("statusId") String statusId) {
+	public PasupuKumkumaResponse getStatus(@PathParam("STATUS_ID") String statusId) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getStatus(statusId));
@@ -114,7 +121,7 @@ public class StatusController {
 	
 	@DELETE
 	@Path("/status/{STATUS_ID}")
-	public PasupuKumkumaResponse deleteRole(@PathParam("statusId") String statusId) {
+	public PasupuKumkumaResponse deleteStatus(@PathParam("STATUS_ID") String statusId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
@@ -123,7 +130,7 @@ public class StatusController {
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			pasupuKumkumaResponse.setMessage("Failed to delete he role");
+			pasupuKumkumaResponse.setMessage("Failed to delete status");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
@@ -133,6 +140,4 @@ public class StatusController {
 	
 	
 	}
-
-
 }
