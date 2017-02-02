@@ -11,7 +11,7 @@ import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
-@Table(name = "COPON_TYPE")
+@Table(name = "COUPON_TYPE")
 @Entity
 public class CouponType extends AbstractModel {
 
