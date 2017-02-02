@@ -14,6 +14,7 @@ import com.visog.pasupukumkuma.dao.AbstractDao;
 import com.visog.pasupukumkuma.dao.master.PujaSamagriDao;
 import com.visog.pasupukumkuma.model.master.Puja;
 import com.visog.pasupukumkuma.model.master.PujaSamagri;
+import com.visog.pasupukumkuma.model.master.State;
 
 @Singleton
 @Transactional
@@ -34,5 +35,19 @@ public class PujaSamagriDaoImpl extends AbstractDao implements PujaSamagriDao {
 		return em.createQuery(q).getResultList();
 		
 	}
+
+	
+	public Boolean isPujaSamagriExists(String name) {
+		
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Long> q = cb.createQuery(Long.class);
+		Root<PujaSamagri> c = q.from(PujaSamagri.class);
+		q.where(cb.equal(cb.lower(c.get("name")), name.toLowerCase()));
+		q.select(cb.count(c));
+		return (em.createQuery(q).getSingleResult() != 0L);
+
+	}
+	
+	
 
 }

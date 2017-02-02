@@ -37,11 +37,11 @@ public class PujaSamagri extends AbstractModel {
 	private String photo;
 	
 	@Column(name="SAMAGRI_COUNT")
-	private Integer samagri_count;
+	private Integer samagriCount;
 	
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name="STATUS_ID")
-    private Status status;*/
+    private Status status;
 	
 	@Column(name="CREATED_BY")
 	private String createdBy;
@@ -97,12 +97,12 @@ public class PujaSamagri extends AbstractModel {
 		this.duration = duration;
 	}
 
-	public Integer getSamagri_count() {
-		return samagri_count;
+	public Integer getSamagriCount() {
+		return samagriCount;
 	}
 
-	public void setSamagri_count(Integer samagri_count) {
-		this.samagri_count = samagri_count;
+	public void setSamagriCount(Integer samagriCount) {
+		this.samagriCount = samagriCount;
 	}
 
 	public String getPhoto() {
@@ -113,13 +113,13 @@ public class PujaSamagri extends AbstractModel {
 		this.photo = photo;
 	}
 
-	/*public Status getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
 	public void setStatus(Status status) {
 		this.status = status;
-	}*/
+	}
 
 	public String getCreatedBy() {
 		return createdBy;

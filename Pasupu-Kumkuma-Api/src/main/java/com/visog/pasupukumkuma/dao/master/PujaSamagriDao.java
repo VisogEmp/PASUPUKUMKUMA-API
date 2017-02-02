@@ -8,4 +8,6 @@ import com.visog.pasupukumkuma.model.master.PujaSamagri;
 public interface PujaSamagriDao extends AbstractDaoI {
 
 	public List<PujaSamagri> getPujaSamagri();
+	
+	public Boolean isPujaSamagriExists(String name);
 }

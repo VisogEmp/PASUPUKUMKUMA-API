@@ -12,7 +12,7 @@ public class PujaSamagriReq {
 	
 	private String photo;
 	
-	private Integer samagri_count;
+	private Integer samagriCount;
 	
 	private String status;
 
@@ -56,12 +56,12 @@ public class PujaSamagriReq {
 		this.photo = photo;
 	}
 
-	public Integer getSamagri_count() {
-		return samagri_count;
+	public Integer getSamagriCount() {
+		return samagriCount;
 	}
 
-	public void setSamagri_count(Integer samagri_count) {
-		this.samagri_count = samagri_count;
+	public void setSamagriCount(Integer samagriCount) {
+		this.samagriCount = samagriCount;
 	}
 
 	public String getStatus() {
@@ -71,6 +71,6 @@ public class PujaSamagriReq {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
+
+
 }
