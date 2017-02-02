@@ -66,7 +66,7 @@ public class CityController {
 	
 	@GET
 	@Path("/city")
-	public PasupuKumkumaResponse getRoles() {
+	public PasupuKumkumaResponse getCity() {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getCity());

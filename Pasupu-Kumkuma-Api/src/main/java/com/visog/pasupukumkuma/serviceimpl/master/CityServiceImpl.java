@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.dao.master.CityDao;
 import com.visog.pasupukumkuma.model.master.City;
+import com.visog.pasupukumkuma.model.master.Country;
 import com.visog.pasupukumkuma.model.master.State;
 import com.visog.pasupukumkuma.req.CityReq;
 import com.visog.pasupukumkuma.res.CityRes;
@@ -27,8 +28,14 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 	public Boolean saveCity(CityReq req) {
 
 		City cites = new City();
+		Country country =new Country();
+		State state = new State();
 		cites.setName(req.getName());
-		cites.setCountry(req.getCountry());
+	
+		
+		state.setId(req.getCountry());
+		cites.setCountry(country);
+		
 
 		City city = new City();
 		city.setId(req.getState());
@@ -88,7 +95,7 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 	public List<CityRes> getCity() {
 		List<City> cites = dao.getCity();
 
-		List<CityRes> stateList = new ArrayList<>();
+		List<CityRes> cityList = new ArrayList<>();
 		CityRes cityRes = null;
 
 		for (City city : cites) {
@@ -96,10 +103,11 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 			cityRes.setId(city.getId());
 			cityRes.setName(city.getName());
 			cityRes.setState(city.getState().getId());
-			stateList.add(cityRes);
+			cityRes.setCountry(city.getCountry().getId());
+			cityList.add(cityRes);
 		}
 
-		return stateList;
+		return cityList;
 	}
 
 	/**
@@ -123,8 +131,5 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 	public Boolean deleteCity(String stateId) {
 		return (dao.delete(City.class, stateId) != 0);
 	}
-
-	
-
 
 }
