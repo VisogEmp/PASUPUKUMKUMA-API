@@ -13,8 +13,8 @@ import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
-@Table(name = "PUJAS")
 @Entity
+@Table(name = "PUJAS")
 public class Puja extends AbstractModel{
 	
 	@Id
