@@ -8,6 +8,6 @@ import com.visog.pasupukumkuma.model.master.State;
 
 public interface PujaSamagriPujaDao extends AbstractDaoI {
 
-public List<PujaSamagriPuja> getPujaSamagriPuja();
+     public List<PujaSamagriPuja> getPujaSamagriPuja();
 	
 }

@@ -43,7 +43,22 @@ public class PujaSamagriPuja extends AbstractModel {
 	
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
+	
+	@Column(name = "UPDATED_ON")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date updatedOn;
 
+	public Date getUpdatedOn() {
+		return updatedOn;
+	}
+
+
+	public void setUpdatedOn(Date updatedOn) {
+		this.updatedOn = updatedOn;
+	}
+
+
+	
 
 	public String getId() {
 		return id;

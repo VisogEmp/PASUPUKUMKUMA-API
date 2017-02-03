@@ -62,7 +62,7 @@ public class PujaSamagriPujaController {
 
 	}
 	@GET
-	@Path("/pujas")
+	@Path("/puja_samagri_puja")
 	public PasupuKumkumaResponse getPujaSamagriPuja() {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
@@ -87,7 +87,7 @@ public class PujaSamagriPujaController {
 
 	}
 	@DELETE
-	@Path("/stapuja_samagri_pujate/{PUJA_SAMAGRI_PUJA_ID}")
+	@Path("/puja_samagri_puja/{PUJA_SAMAGRI_PUJA_ID}")
 	public PasupuKumkumaResponse deleteRole(@PathParam("PUJA_SAMAGRI_PUJA_ID") String pujasamagripujaId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
