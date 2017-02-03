@@ -78,8 +78,8 @@ public class StateController {
 	}
 
 	@GET
-	@Path("/state/{stateId}")
-	public PasupuKumkumaResponse getRole(@PathParam("stateId") String stateId) {
+	@Path("/state/{STATE_ID}")
+	public PasupuKumkumaResponse getRole(@PathParam("STATE_ID") String stateId) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getState(stateId));

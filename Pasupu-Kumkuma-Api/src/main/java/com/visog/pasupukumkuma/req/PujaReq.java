@@ -10,11 +10,11 @@ public class PujaReq {
 	
 	private String duration;
 	
-	private Integer pujaCount;
-	
 	private String photo;
 	
-	private String status;
+	private Integer pujaCount;
+	
+    private String status;
 
 	
 	public Integer getPujaCount() {

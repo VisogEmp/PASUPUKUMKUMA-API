@@ -13,7 +13,10 @@
 			<class>com.visog.pasupukumkuma.model.master.State</class>
 			<class>com.visog.pasupukumkuma.model.master.City</class>
 			<class>com.visog.pasupukumkuma.model.master.Puja</class>		
-
+			<class>com.visog.pasupukumkuma.model.master.PujaSamagri</class>
+			<class>com.visog.pasupukumkuma.model.master.Status</class>
+			<class>com.visog.pasupukumkuma.model.master.CouponType</class>			
+						
 		<!-- <class>com.visog.jobportal.AccessLinks</class> -->
 
 		<exclude-unlisted-classes />

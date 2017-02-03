@@ -15,38 +15,37 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.constants.Status;
-import com.visog.pasupukumkuma.req.PujaReq;
+import com.visog.pasupukumkuma.req.CouponTypeReq;
+import com.visog.pasupukumkuma.req.PujaSamagriReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
-import com.visog.pasupukumkuma.service.master.PujaService;
-
+import com.visog.pasupukumkuma.service.master.CouponTypeService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
-public class PujaController {
-	
-	private static final Logger logger = Logger.getLogger(PujaController.class);
+public class CouponTypeController {
+
+	private static final Logger logger = Logger.getLogger(CouponTypeController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private PujaService service;
+	private CouponTypeService service;
 
 	/**
-	 * This method creates the puja
+	 * This method creates the CouponType
 	 * 
 	 * @param req
 	 * @return
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/puja")
-	
-	public PasupuKumkumaResponse createPujas(PujaReq req) {
+	@Path("/coupon_type")
+	public PasupuKumkumaResponse createCouponType(CouponTypeReq req) {
 
-		service.savePuja(req);
+		service.saveCouponType(req);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Puja saved succcessfully");
+		pasupuKumkumaResponse.setMessage("CouponType saved succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -55,21 +54,20 @@ public class PujaController {
 	}
 
 	/**
-	 * This method updates the Puja
+	 * This method updates the CouponType
 	 * 
 	 * @param req
 	 * @return
 	 */
-	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/puja/{PUJA_ID}")
-	public PasupuKumkumaResponse updatePujas(@PathParam("PUJA_ID") String pujasId, PujaReq req) {
+	@Path("/coupon_type/{COUPON_TYPE_ID}")
+	public PasupuKumkumaResponse updateCouponType(@PathParam("coupontypeId") String coupontypeId, CouponTypeReq req) {
 
-		service.updatePuja(req, pujasId);
+		service.updateCouponType(req, coupontypeId);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Puja updated succcessfully");
+		pasupuKumkumaResponse.setMessage("CouponType updated succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -78,18 +76,17 @@ public class PujaController {
 	}
 
 	/**
-	 * This method retrieves all puja
+	 * This method retrieves all coupontypes
 	 * 
 	 * @return
 	 */
-	
 	@GET
-	@Path("/puja")
-	public PasupuKumkumaResponse getPujas() {
+	@Path("/coupon_type")
+	public PasupuKumkumaResponse getCouponType() {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getPuja());
-		pasupuKumkumaResponse.setMessage("Puja fetched succcessfully");
+		pasupuKumkumaResponse.setData(service.getCouponType());
+		pasupuKumkumaResponse.setMessage("CouponType fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -98,54 +95,49 @@ public class PujaController {
 	}
 
 	/**
-	 * This method retrieves a single Puja
+	 * This method retrieves a single CouponType
 	 * 
 	 * @return
 	 */
 
-
 	@GET
-	@Path("/puja/{PUJA_ID}")
-	public PasupuKumkumaResponse getPujas(@PathParam("PUJA_ID") String pujasId) {
+	@Path("/coupon_type/{COUPON_TYPE_ID}")
+	public PasupuKumkumaResponse getCouponType(@PathParam("coupontypeId") String coupontypeId) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getPuja(pujasId));
-		pasupuKumkumaResponse.setMessage("Puja fetched succcessfully");
+		pasupuKumkumaResponse.setData(service.getCouponType(coupontypeId));
+		pasupuKumkumaResponse.setMessage("CouponType fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return pasupuKumkumaResponse;
 
 	}
-	
+
 	/**
 	 * This method delete the role
 	 * 
 	 * @return
 	 */
-	
+
 	@DELETE
-	@Path("/puja/{PUJA_ID}")
-	public PasupuKumkumaResponse deletePujas(@PathParam("PUJA_ID") String pujasId) {
-		
+	@Path("/coupon_type/{COUPON_TYPE_ID}")
+	public PasupuKumkumaResponse deleteCouponType(@PathParam("coupontypeId") String coupontypeId) {
+
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
-		if(service.deletePuja(pujasId)) {
-			pasupuKumkumaResponse.setMessage("Puja deleted succcessfully");
+		if (service.deleteCouponType(coupontypeId)) {
+			pasupuKumkumaResponse.setMessage("CouponType deleted succcessfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			pasupuKumkumaResponse.setMessage("Failed to delete he puja");
+			pasupuKumkumaResponse.setMessage("Failed to delete he coupontype");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
 
-
 		return pasupuKumkumaResponse;
-	
-	
+
 	}
+
 }
-
-
-	

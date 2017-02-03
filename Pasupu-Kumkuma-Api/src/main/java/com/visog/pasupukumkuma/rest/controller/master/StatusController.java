@@ -15,38 +15,36 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.constants.Status;
-import com.visog.pasupukumkuma.req.PujaReq;
+import com.visog.pasupukumkuma.req.StatusReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
-import com.visog.pasupukumkuma.service.master.PujaService;
-
+import com.visog.pasupukumkuma.service.master.StatusService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
-public class PujaController {
-	
-	private static final Logger logger = Logger.getLogger(PujaController.class);
+public class StatusController {
+
+	private static final Logger logger = Logger.getLogger(StatusController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 
 	@Inject
-	private PujaService service;
+	private StatusService service;
 
 	/**
-	 * This method creates the puja
+	 * This method creates the Role
 	 * 
 	 * @param req
 	 * @return
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/puja")
-	
-	public PasupuKumkumaResponse createPujas(PujaReq req) {
+	@Path("/status")
+	public PasupuKumkumaResponse createStatus(StatusReq req) {
 
-		service.savePuja(req);
+		service.saveStatus(req);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Puja saved succcessfully");
+		pasupuKumkumaResponse.setMessage("Status saved succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -55,21 +53,20 @@ public class PujaController {
 	}
 
 	/**
-	 * This method updates the Puja
+	 * This method updates the status
 	 * 
 	 * @param req
 	 * @return
 	 */
-	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/puja/{PUJA_ID}")
-	public PasupuKumkumaResponse updatePujas(@PathParam("PUJA_ID") String pujasId, PujaReq req) {
+	@Path("/status/{STATUS_ID}")
+	public PasupuKumkumaResponse updateStatus(@PathParam("STATUS_ID") String statusId, StatusReq req) {
 
-		service.updatePuja(req, pujasId);
+		service.updateStatus(req, statusId);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Puja updated succcessfully");
+		pasupuKumkumaResponse.setMessage("Status updated succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -78,18 +75,17 @@ public class PujaController {
 	}
 
 	/**
-	 * This method retrieves all puja
+	 * This method retrieves all roles
 	 * 
 	 * @return
 	 */
-	
 	@GET
-	@Path("/puja")
-	public PasupuKumkumaResponse getPujas() {
+	@Path("/status")
+	public PasupuKumkumaResponse getStatus() {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getPuja());
-		pasupuKumkumaResponse.setMessage("Puja fetched succcessfully");
+		pasupuKumkumaResponse.setData(service.getStatus());
+		pasupuKumkumaResponse.setMessage("Status fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -98,19 +94,18 @@ public class PujaController {
 	}
 
 	/**
-	 * This method retrieves a single Puja
+	 * This method retrieves a single Role
 	 * 
 	 * @return
 	 */
 
-
 	@GET
-	@Path("/puja/{PUJA_ID}")
-	public PasupuKumkumaResponse getPujas(@PathParam("PUJA_ID") String pujasId) {
+	@Path("/status/{STATUS_ID}")
+	public PasupuKumkumaResponse getStatus(@PathParam("STATUS_ID") String statusId) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getPuja(pujasId));
-		pasupuKumkumaResponse.setMessage("Puja fetched succcessfully");
+		pasupuKumkumaResponse.setData(service.getStatus(statusId));
+		pasupuKumkumaResponse.setMessage("Status fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -125,17 +120,17 @@ public class PujaController {
 	 */
 	
 	@DELETE
-	@Path("/puja/{PUJA_ID}")
-	public PasupuKumkumaResponse deletePujas(@PathParam("PUJA_ID") String pujasId) {
+	@Path("/status/{STATUS_ID}")
+	public PasupuKumkumaResponse deleteStatus(@PathParam("STATUS_ID") String statusId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
-		if(service.deletePuja(pujasId)) {
-			pasupuKumkumaResponse.setMessage("Puja deleted succcessfully");
+		if(service.deleteStatus(statusId)) {
+			pasupuKumkumaResponse.setMessage("Status deleted succcessfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			pasupuKumkumaResponse.setMessage("Failed to delete he puja");
+			pasupuKumkumaResponse.setMessage("Failed to delete status");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
@@ -146,6 +141,3 @@ public class PujaController {
 	
 	}
 }
-
-
-	

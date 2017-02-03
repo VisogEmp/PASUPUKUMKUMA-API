@@ -62,7 +62,7 @@ public class PujaSamagriController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/puja_samagri/{PUJA_SAMAGRI_ID}")
-	public PasupuKumkumaResponse updateRole(@PathParam("pujasamagriId") String pujasamagriId, PujaSamagriReq req) {
+	public PasupuKumkumaResponse updatePujaSamagri(@PathParam("PUJA_SAMAGRI_ID") String pujasamagriId, PujaSamagriReq req) {
 
 		service.updatePujaSamagri(req, pujasamagriId);
 
@@ -100,7 +100,7 @@ public class PujaSamagriController {
 
 	@GET
 	@Path("/puja_samagri/{PUJA_SAMAGRI_ID}")
-	public PasupuKumkumaResponse getPujaSamagri(@PathParam("pujasamagriId") String pujasamagriId) {
+	public PasupuKumkumaResponse getPujaSamagri(@PathParam("PUJA_SAMAGRI_ID") String pujasamagriId) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getPujaSamagri(pujasamagriId));
@@ -119,7 +119,7 @@ public class PujaSamagriController {
 	
 	@DELETE
 	@Path("/puja_samagri/{PUJA_SAMAGRI_ID}")
-	public PasupuKumkumaResponse deletePujaSamagri(@PathParam("pujasamagriId") String pujasamagriId) {
+	public PasupuKumkumaResponse deletePujaSamagri(@PathParam("PUJA_SAMAGRI_ID") String pujasamagriId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 

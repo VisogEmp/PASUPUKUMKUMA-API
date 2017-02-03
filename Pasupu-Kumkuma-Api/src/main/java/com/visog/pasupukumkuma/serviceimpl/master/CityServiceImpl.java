@@ -31,26 +31,23 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 		Country country =new Country();
 		State state = new State();
 		cites.setName(req.getName());
-	
+	     country.setId(req.getCountry());
 		
-		state.setId(req.getCountry());
+		state.setId(req.getState());
 		cites.setCountry(country);
-		
-
-		City city = new City();
-		city.setId(req.getState());
+		cites.setState(state);
 		
 		DaoUtils.setEntityCreateAuditColumns(cites);
 
 		if (dao.isCityExists(req.getName())) {
 
-			logger.info("State already exist : " + cites.getId());
+			logger.info("city already exist : " + cites.getId());
 			return false;
 
 		} else {
 			dao.save(cites);
 
-			logger.info("state created successfully : " + cites.getId());
+			logger.info("city created successfully : " + cites.getId());
 			return true;
 
 		}
@@ -69,19 +66,21 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 		if (cites.getName().toLowerCase().trim().equals(req.getName().toLowerCase().trim())
 				|| (!dao.isCityExists(req.getName()))) {
 
-			cites.setName(req.getName());
-
+			Country country =new Country();
 			State state = new State();
+			cites.setName(req.getName());
+		     country.setId(req.getCountry());
+			
 			state.setId(req.getState());
-
+			cites.setCountry(country);
 			cites.setState(state);
 
 			dao.update(cites);
-			logger.info("state updated successfully : " + cites.getId());
+			logger.info("city updated successfully : " + cites.getId());
 			return true;
 
 		} else {
-			logger.info("states already exist : " + cites.getId());
+			logger.info("city already exist : " + cites.getId());
 			return false;
 
 		}

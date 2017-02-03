@@ -5,47 +5,29 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
-@Table(name = "PUJA_SAMAGRI")
+@Table(name = "COUPON_TYPE")
 @Entity
-public class PujaSamagri extends AbstractModel {
-	
+public class CouponType extends AbstractModel {
+
 	@Id
-	@Column(name="ID")
+	@Column(name = "ID")
 	private String id;
-	
-	@Column(name="NAME")
+
+	@Column(name = "NAME")
 	private String name;
-	
-	@Column(name="DESCRIPTION")
+
+	@Column(name = "DESCRIPTION")
 	private String description;
-	
-	@Column(name="PRICE")
-	private Double price;
-	
-	@Column(name="DURATION")
-	private String duration;
-	
-	@Column(name="PHOTO")
-	private String photo;
-	
-	@Column(name="SAMAGRI_COUNT")
-	private Integer samagriCount;
-	
-	@ManyToOne
-	@JoinColumn(name="STATUS_ID")
-    private Status status;
-	
-	@Column(name="CREATED_BY")
+
+	@Column(name = "CREATED_BY")
 	private String createdBy;
-	
+
 	@Column(name = "CREATED_ON")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdOn;
@@ -81,46 +63,6 @@ public class PujaSamagri extends AbstractModel {
 		this.description = description;
 	}
 
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	public String getDuration() {
-		return duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-	}
-
-	public Integer getSamagriCount() {
-		return samagriCount;
-	}
-
-	public void setSamagriCount(Integer samagriCount) {
-		this.samagriCount = samagriCount;
-	}
-
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
-	}
-
 	public String getCreatedBy() {
 		return createdBy;
 	}
@@ -152,9 +94,5 @@ public class PujaSamagri extends AbstractModel {
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-	
-	
-	
-	
 
 }

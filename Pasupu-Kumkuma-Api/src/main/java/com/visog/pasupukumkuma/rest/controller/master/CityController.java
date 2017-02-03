@@ -70,7 +70,7 @@ public class CityController {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getCity());
-		pasupuKumkumaResponse.setMessage("state fetched succcessfully");
+		pasupuKumkumaResponse.setMessage("city fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -84,7 +84,7 @@ public class CityController {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getCity(cityId));
-		pasupuKumkumaResponse.setMessage("state fetched succcessfully");
+		pasupuKumkumaResponse.setMessage("city fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -99,7 +99,7 @@ public class CityController {
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
 		if(service.deleteCity(cityId)) {
-			pasupuKumkumaResponse.setMessage("state deleted succcessfully");
+			pasupuKumkumaResponse.setMessage("city deleted succcessfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
