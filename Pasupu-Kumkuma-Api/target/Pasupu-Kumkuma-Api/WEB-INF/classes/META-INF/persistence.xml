@@ -12,6 +12,7 @@
 		    <class>com.visog.pasupukumkuma.model.master.Manager</class>
 			<class>com.visog.pasupukumkuma.model.master.Student</class>
 			<class>com.visog.pasupukumkuma.model.master.Country</class>
+			<class>com.visog.pasupukumkuma.model.master.Nakshatram</class>
 			
 	
 		
