@@ -946,111 +946,7 @@ response :
 	
 } 
 ================================================================================
-1. Create PUJA
-=====================================
-url : /master/puja
-ex url : /master/puja
-method : POST
-data : 
-
-{
-  "name" : "coconot", 
-  "description" : "master data description..",
-   "price" :"100",
-   "duration" : "2 hours",
-   cou
-   "photo" : "c//fileserver/coconut"
-}
-
-response : 
-
-{
-	"statusCode" : 200/300 /500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja Created sucessfully/ Failed to create puja"
-	"data" : null
-} 
-
-2 Edit  PUJA
-=====================================
-url : /master/puja/<PUJA_ID>
-ex url : /master/puja/2
-
-method : PUT
-data : 
-
-{
-  "name" : "admin", 
-  "description" : " master data description…..", 
-}
-
-response : 
-
-{
-	"statusCode" : 200/300/500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja updated sucessfully/ Failed to update puja"
-	"data" : null
-} 
-
-3. Get All PUJA
-=====================================
-url : /master/puja
-ex url : /master/puja
-
-method : GET
-data : 
-
-
-response : 
-
-{
-	"statusCode" : 200/300/500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja updated sucessfully/ Failed to update puja"
-	"data" : [
-		{"id" : 1, "name" : "admin", "description" : " master data description……"}, {},...
-	]
-} 
-
-4. Get PUJA
-=====================================
-url : /master/puja/<PUJA_ID>
-ex url : /master/puja/2
-
-method : GET
-data : 
-
-
-response : 
-
-{
-	"statusCode" : 200/300/500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja updated sucessfully/ Failed to update puja"
-	"data" : {"id" : 2, "name" : "admin", "description" : " master data description…"}
-	
-} 
-
-5. Delete PUJA
-=====================================
-url : /master/puja/<PUJA_ID>
-ex url : /master/puja/2
-
-method : DELETE
-data : 
-
-
-response : 
-
-{
-	"statusCode" : 200/300/500, 
-	"status" : "SUCCESS/FAILURE/ERROR", 
-	"statusDesc" : "puja deleted sucessfully/ failed to update puja"
-	"data" : NULL
-	
-} 
-================================================================================
+============================================================================
 1. Create PUJA_SAMAGRI
 =====================================
 url : /master/puja_samagri
@@ -1063,7 +959,9 @@ data :
   "description" : "master data description..",
    "price" :"100",
    "duration" : "2 hours",
-   "photo" : "c//fileserver/coconut"
+   "photo" : "c//fileserver/coconut",
+    "samagri_count" : "123",
+   "status" : " 009"
 }
 
 response : 
@@ -1087,7 +985,9 @@ data :
   "description" : "master data description..",
    "price" :"100",
    "duration" : "2 hours",
-   "photo" : "c/fileserver/coconut"
+   "photo" : "c/fileserver/coconut",
+   "samagri_count" : "123",
+   "status" : " 009"
 }
 
 response : 
@@ -1116,7 +1016,7 @@ response :
 	"statusDesc" : "puja samagri updated sucessfully/ Failed to update puja samagri"
 	"data" : [
 		{"id" : 1 ,"name" : "coconot","description" : "master data description..", "price" :"100", "duration" : "2 hours",
-   "photo" : "c/fileserver/coconut"}, {},...
+   "photo" : "c/fileserver/coconut", "samagri_count" : "123","status" : " 009"}, {},...
 	]
 } 
 
@@ -1136,7 +1036,7 @@ response :
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "puja samagri updated sucessfully/ Failed to update puja samagri"
 	"data" : {"id" : 1 ,"name" : "coconot","description" : "master data description..", "price" :"100", "duration" : "2 hours",
-   "photo" : "c/fileserver/coconut"}
+   "photo" : "c/fileserver/coconut", "samagri_count" : "123","status" : " 009"}
 	
 } 
 

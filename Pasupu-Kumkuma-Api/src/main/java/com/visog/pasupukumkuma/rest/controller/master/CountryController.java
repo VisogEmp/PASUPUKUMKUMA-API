@@ -83,7 +83,7 @@ public class CountryController {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getCountry(countryId));
-		pasupuKumkumaResponse.setMessage("Role fetched succcessfully");
+		pasupuKumkumaResponse.setMessage("country fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -92,8 +92,8 @@ public class CountryController {
 	}
 	
 	@DELETE
-	@Path("/country/{countryId}")
-	public PasupuKumkumaResponse deleteRole(@PathParam("countryId") String countryId) {
+	@Path("/country/{COUNTRY_ID}")
+	public PasupuKumkumaResponse deleteRosle(@PathParam("COUNTRY_ID") String countryId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 

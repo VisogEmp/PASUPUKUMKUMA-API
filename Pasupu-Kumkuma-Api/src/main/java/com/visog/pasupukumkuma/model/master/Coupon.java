@@ -11,23 +11,19 @@ import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
-
-@Table(name = "MANAGER")
+@Table(name = "COUPON")
 @Entity
-public class Manager extends AbstractModel {
-	
+public class Coupon extends AbstractModel {
+
 	@Id
-	@Column(name ="ID")
+	@Column(name = "ID")
 	private String id;
-	
+
 	@Column(name = "NAME")
 	private String name;
 
-	@Column(name = "EMAIL")
-	private String  email;
-	
-	@Column(name = "CREATED_SID")
-	private String createdSid;
+	@Column(name = "DESCRIPTION")
+	private String description;
 
 	@Column(name = "CREATED_BY")
 	private String createdBy;
@@ -35,9 +31,6 @@ public class Manager extends AbstractModel {
 	@Column(name = "CREATED_ON")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdOn;
-
-	@Column(name = "UPDATED_SID")
-	private String updatedSid;
 
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
@@ -62,20 +55,12 @@ public class Manager extends AbstractModel {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getCreatedSid() {
-		return createdSid;
-	}
-
-	public void setCreatedSid(String createdSid) {
-		this.createdSid = createdSid;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getCreatedBy() {
@@ -94,14 +79,6 @@ public class Manager extends AbstractModel {
 		this.createdOn = createdOn;
 	}
 
-	public String getUpdatedSid() {
-		return updatedSid;
-	}
-
-	public void setUpdatedSid(String updatedSid) {
-		this.updatedSid = updatedSid;
-	}
-
 	public String getUpdatedBy() {
 		return updatedBy;
 	}
@@ -117,5 +94,5 @@ public class Manager extends AbstractModel {
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
 	}
-	
+
 }

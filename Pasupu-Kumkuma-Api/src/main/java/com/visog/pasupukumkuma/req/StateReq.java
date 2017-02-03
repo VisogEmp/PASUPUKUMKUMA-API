@@ -1,22 +1,28 @@
 package com.visog.pasupukumkuma.req;
 
-public class ManagerReq {
+public class StateReq {
+
 	private String name;
-	private String email;
-	
+
+	private String country;
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail() {
-		return email;
+
+	public String getCountry() {
+		return country;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
-	
+
 	
 
+	
 }

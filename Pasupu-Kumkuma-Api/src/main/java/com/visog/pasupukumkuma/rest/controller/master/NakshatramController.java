@@ -59,6 +59,7 @@ public class NakshatramController {
 	 * @param req
 	 * @return
 	 */
+	//Bhavna
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/nakshatram/{nakshatramId}")

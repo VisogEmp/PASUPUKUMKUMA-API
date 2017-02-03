@@ -15,47 +15,47 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.constants.Status;
-import com.visog.pasupukumkuma.req.ManagerReq;
+import com.visog.pasupukumkuma.req.StateReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
-import com.visog.pasupukumkuma.service.master.ManagerService;
-
+import com.visog.pasupukumkuma.service.master.StateService;
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
-public class ManagerController {
-	
-	private static final Logger logger = Logger.getLogger(ManagerController.class);
+
+public class StateController {
+
+	private static final Logger logger = Logger.getLogger(StateController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
 	
 	@Inject
-	private ManagerService service;
+	private StateService service;
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/manager")
-	public PasupuKumkumaResponse createManager(ManagerReq req) {
+	@Path("/state")
+	public PasupuKumkumaResponse createState(StateReq req) {
 
-		service.saveManager(req);
+		service.saveState(req);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Manager saved succcessfully");
+		pasupuKumkumaResponse.setMessage("state saved succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return pasupuKumkumaResponse;
 
 	}
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/manager/{managerId}")
-	public PasupuKumkumaResponse updateRole(@PathParam("managerId") String managerId, ManagerReq req) {
+	@Path("/state/{STATE_ID}")
+	public PasupuKumkumaResponse updateRole(@PathParam("STATE_ID") String stateId, StateReq req) {
 
-		service.updateManager(req, managerId);
+		service.updateState(req, stateId);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Manager updated succcessfully");
+		pasupuKumkumaResponse.setMessage("state updated succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -64,12 +64,26 @@ public class ManagerController {
 	}
 	
 	@GET
-	@Path("/manager")
+	@Path("/state")
 	public PasupuKumkumaResponse getRoles() {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getManagers());
-		pasupuKumkumaResponse.setMessage("manager fetched succcessfully");
+		pasupuKumkumaResponse.setData(service.getState());
+		pasupuKumkumaResponse.setMessage("state fetched succcessfully");
+		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		return pasupuKumkumaResponse;
+
+	}
+
+	@GET
+	@Path("/state/{stateId}")
+	public PasupuKumkumaResponse getRole(@PathParam("stateId") String stateId) {
+
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
+		pasupuKumkumaResponse.setData(service.getState(stateId));
+		pasupuKumkumaResponse.setMessage("state fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -78,17 +92,17 @@ public class ManagerController {
 	}
 	
 	@DELETE
-	@Path("/manager/{managerId}")
-	public PasupuKumkumaResponse deleteRole(@PathParam("managerId") String managerId) {
+	@Path("/state/{STATE_ID}")
+	public PasupuKumkumaResponse deleteRole(@PathParam("STATE_ID") String stateId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
-		if(service.deleteManagers(managerId)) {
-			pasupuKumkumaResponse.setMessage("Manager deleted succcessfully");
+		if(service.deleteState(stateId)) {
+			pasupuKumkumaResponse.setMessage("state deleted succcessfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			pasupuKumkumaResponse.setMessage("Failed to delete the manager");
+			pasupuKumkumaResponse.setMessage("Failed to delete the country");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
@@ -100,3 +114,4 @@ public class ManagerController {
 	}
 
 }
+
