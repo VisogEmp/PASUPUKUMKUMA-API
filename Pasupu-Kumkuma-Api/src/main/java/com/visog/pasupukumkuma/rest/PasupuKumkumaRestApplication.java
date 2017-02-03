@@ -11,6 +11,7 @@ import com.visog.pasupukumkuma.rest.controller.master.CityController;
 import com.visog.pasupukumkuma.rest.controller.master.CountryController;
 import com.visog.pasupukumkuma.rest.controller.master.PujaController;
 import com.visog.pasupukumkuma.rest.controller.master.PujaSamagriController;
+import com.visog.pasupukumkuma.rest.controller.master.PujaSamagriPujaController;
 import com.visog.pasupukumkuma.rest.controller.master.RolesController;
 import com.visog.pasupukumkuma.rest.controller.master.StateController;
 import com.visog.pasupukumkuma.rest.controller.master.StatusController;
@@ -30,6 +31,7 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(PujaController.class);
 		classes.add(StatusController.class);
 		classes.add(PujaSamagriController.class);
+		classes.add(PujaSamagriPujaController.class);
 	}
 
 	public Set<Object> getSingletons() {

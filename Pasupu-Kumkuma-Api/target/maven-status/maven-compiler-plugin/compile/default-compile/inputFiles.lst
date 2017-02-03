@@ -15,6 +15,7 @@ C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\co
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\dao\master\PujaSamagriDao.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\service\master\GenderService.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\serviceimpl\master\CouponTypeServiceImpl.java
+C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\model\master\PujaSamagriPuja.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\serviceimpl\master\PujaServiceImpl.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\service\master\PujaService.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\model\master\Roles.java
@@ -47,15 +48,19 @@ C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\co
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\utils\ParamUtils.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\utils\DaoUtils.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\dao\AbstractDaoI.java
+C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\daoimpl\master\PujaSamagriPujaDaoImpl.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\res\RolesRes.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\serviceimpl\master\PujaSamagriServiceImpl.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\daoimpl\master\CityDaoImpl.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\res\CityRes.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\rest\controller\master\StatusController.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\req\PujaSamagriReq.java
+C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\req\PujaSamagriPujaReq.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\service\master\RolesService.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\res\AccessLinksResponse.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\model\master\State.java
+C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\res\PujaSamagriPujaRes.java
+C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\rest\controller\master\PujaSamagriPujaController.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\utils\PropertyUtil.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\rest\controller\master\PujaSamagriController.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\serviceimpl\master\CityServiceImpl.java
@@ -65,6 +70,7 @@ C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\co
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\model\master\Puja.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\rest\PasupuKumkumaRestApplication.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\service\master\StateService.java
+C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\dao\master\PujaSamagriPujaDao.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\model\master\City.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\dao\master\StateDao.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\res\CouponTypeRes.java
@@ -93,6 +99,7 @@ C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\co
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\model\master\Gender.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\servlet\ContextListener.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\rest\controller\master\PujaController.java
+C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\service\master\PujaSamagriPujaService.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\dao\SuperAdminDao.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\req\StateReq.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\dao\AbstractDao.java
@@ -101,4 +108,5 @@ C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\co
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\daoimpl\SuperAdminDaoImpl.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\dao\master\CityDao.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\rest\controller\SuperAdminController.java
+C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\serviceimpl\master\PujaSamagriPujaServiceImpl.java
 C:\Users\K.REDDIPRASAD\git\PASUPUKUMKUMA-API\Pasupu-Kumkuma-Api\src\main\java\com\visog\pasupukumkuma\dao\master\PujaDao.java

@@ -14,7 +14,7 @@
 			<class>com.visog.pasupukumkuma.model.master.PujaSamagri</class>
 			<class>com.visog.pasupukumkuma.model.master.Status</class>
 			<class>com.visog.pasupukumkuma.model.master.CouponType</class>
-			
+			<class>com.visog.pasupukumkuma.model.master.PujaSamagriPuja</class>
 			
 			
 	

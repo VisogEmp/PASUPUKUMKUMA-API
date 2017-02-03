@@ -1073,6 +1073,7 @@ data :
 {
   "pujasamagri" : "11111", 
   "puja_id" : "23232", 
+  "status"  :"123"
 }
 
 response : 
@@ -1094,7 +1095,8 @@ data :
 
 {
    "pujasamagri" : "11111", 
-  "puja_id" : "23232", 
+  "puja_id" : "23232",
+  "status":"123"
 }
 
 response : 
@@ -1121,7 +1123,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "puja detals updated sucessfully/ Failed to update puja detals"
-	"data" : [
+	"data" : "status":"123"[
 		{"id" : 1,  "pujasamagri" : "11111",  "puja_id" : "23232", }, {},...
 	]
 } 
@@ -1141,7 +1143,7 @@ response :
 	"statusCode" : 200/300/500, 
 	"status" : "SUCCESS/FAILURE/ERROR", 
 	"statusDesc" : "puja detals updated sucessfully/ Failed to update puja detals"
-	"data" : {"id" : 2, "pujasamagri" : "11111",   "puja_id" : "23232", }
+	"data" : {"id" : 2, "pujasamagri" : "11111",   "puja_id" : "23232","status":"123" }
 	
 } 
 
