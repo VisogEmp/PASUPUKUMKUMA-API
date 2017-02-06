@@ -10,16 +10,31 @@
 		
 		    <class>com.visog.pasupukumkuma.model.master.Roles</class>
 			<class>com.visog.pasupukumkuma.model.master.Country</class>
+<<<<<<< HEAD
+			<class>com.visog.pasupukumkuma.model.master.State</class>
+			<class>com.visog.pasupukumkuma.model.master.City</class>
+			<class>com.visog.pasupukumkuma.model.master.Puja</class>		
+=======
+<<<<<<< HEAD
+			<class>com.visog.pasupukumkuma.model.master.Nakshatram</class>
+=======
 			<class>com.visog.pasupukumkuma.model.master.Puja</class>
+>>>>>>> branch 'master' of https://github.com/VisogEmp/PASUPUKUMKUMA-API.git
 			<class>com.visog.pasupukumkuma.model.master.PujaSamagri</class>
 			<class>com.visog.pasupukumkuma.model.master.Status</class>
+<<<<<<< HEAD
+			<class>com.visog.pasupukumkuma.model.master.CouponType</class>			
+						
+=======
 			<class>com.visog.pasupukumkuma.model.master.CouponType</class>
 			<class>com.visog.pasupukumkuma.model.master.PujaSamagriPuja</class>
 			
+>>>>>>> branch 'master' of https://github.com/VisogEmp/PASUPUKUMKUMA-API.git
 			
 	
 		
 
+>>>>>>> branch 'master' of https://github.com/VisogEmp/PASUPUKUMKUMA-API.git
 		<!-- <class>com.visog.jobportal.AccessLinks</class> -->
 
 		<exclude-unlisted-classes />

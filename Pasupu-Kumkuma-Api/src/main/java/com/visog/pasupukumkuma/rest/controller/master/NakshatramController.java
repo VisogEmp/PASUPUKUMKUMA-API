@@ -15,32 +15,37 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.constants.Status;
-import com.visog.pasupukumkuma.req.CityReq;
+import com.visog.pasupukumkuma.req.NakshatramReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
-import com.visog.pasupukumkuma.service.master.CityService;
+import com.visog.pasupukumkuma.service.master.NakshatramService;
 
 
 @Path("/master")
 @Produces(MediaType.APPLICATION_JSON)
+public class NakshatramController {
 
-public class CityController {
-
-	private static final Logger logger = Logger.getLogger(CityController.class);
+	private static final Logger logger = Logger.getLogger(NakshatramController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
-	
+
 	@Inject
-	private CityService service;
-	
+	private NakshatramService service;
+
+	/**
+	 * This method creates the Role
+	 * 
+	 * @param req
+	 * @return
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/city")
-	public PasupuKumkumaResponse createCity(CityReq req) {
+	@Path("/nakshatram")
+	public PasupuKumkumaResponse createNakshatram(NakshatramReq req) {
 
-		service.saveCity(req);
+		service.saveNakshatram(req);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("city saved succcessfully");
+		pasupuKumkumaResponse.setMessage("Nakshatram saved succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -48,15 +53,61 @@ public class CityController {
 
 	}
 
+	/**
+	 * This method updates the Role
+	 * 
+	 * @param req
+	 * @return
+	 */
+	//Bhavna
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/city/{CITY_ID}")
-	public PasupuKumkumaResponse updateCity(@PathParam("CITY_ID") String cityid, CityReq req) {
+	@Path("/nakshatram/{nakshatramId}")
+	public PasupuKumkumaResponse updateRole(@PathParam("nakshatramId") String nakshatramId, NakshatramReq req) {
 
-		service.updateCity(req, cityid);
+		service.updateNakshatram(req, nakshatramId);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("city updated succcessfully");
+		pasupuKumkumaResponse.setMessage("Nakshatram updated succcessfully");
+		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		return pasupuKumkumaResponse;
+
+	}
+
+	/**
+	 * This method retrieves all Nakshatram
+	 * 
+	 * @return
+	 */
+	@GET
+	@Path("/nakshatram")
+	public PasupuKumkumaResponse getNakshatram() {
+
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
+		pasupuKumkumaResponse.setData(service.getNakshatram());
+		pasupuKumkumaResponse.setMessage("Nakshatram fetched succcessfully");
+		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		return pasupuKumkumaResponse;
+
+	}
+
+	/**
+	 * This method retrieves a single Role
+	 * 
+	 * @return
+	 */
+
+	@GET
+	@Path("/nakshatram/{nakshatramId}")
+	public PasupuKumkumaResponse getNakshatram(@PathParam("nakshatramId") String nakshatramId) {
+
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
+		pasupuKumkumaResponse.setData(service.getNakshatram(nakshatramId));
+		pasupuKumkumaResponse.setMessage("Nakshatram fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -64,52 +115,31 @@ public class CityController {
 
 	}
 	
-	@GET
-	@Path("/city")
-	public PasupuKumkumaResponse getCity() {
-
-		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getCity());
-		pasupuKumkumaResponse.setMessage("city fetched succcessfully");
-		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
-		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-
-		return pasupuKumkumaResponse;
-
-	}
-
-	@GET
-	@Path("/city/{CITY_ID}")
-	public PasupuKumkumaResponse getCity(@PathParam("CITY_ID") String cityId) {
-
-		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getCity(cityId));
-		pasupuKumkumaResponse.setMessage("city fetched succcessfully");
-		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
-		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-
-		return pasupuKumkumaResponse;
-
-	}
+	/**
+	 * This method delete the role
+	 * 
+	 * @return
+	 */
 	
 	@DELETE
-	@Path("/city/{CITY_ID}")
-	public PasupuKumkumaResponse deleteCity(@PathParam("CITY_ID") String cityId) {
+	@Path("/nakshatram/{nakshatramId}")
+	public PasupuKumkumaResponse deleteNakshatram(@PathParam("nakshatramId") String nakshatramId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
-		if(service.deleteCity(cityId)) {
-			pasupuKumkumaResponse.setMessage("city deleted succcessfully");
+		if(service.deleteNakshatram(nakshatramId)) {
+			pasupuKumkumaResponse.setMessage("Nakshyatram deleted succcessfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			pasupuKumkumaResponse.setMessage("Failed to delete the country");
+			pasupuKumkumaResponse.setMessage("Failed to delete he Nakshyatram");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
 
 
 		return pasupuKumkumaResponse;
+	 
 	
-	}	
+	}
 }

@@ -17,7 +17,6 @@ public class CityReq {
 	}
 
 	
-
 	public String getState() {
 		return state;
 	}

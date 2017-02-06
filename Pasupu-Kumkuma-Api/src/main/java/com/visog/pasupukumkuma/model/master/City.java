@@ -1,6 +1,5 @@
 package com.visog.pasupukumkuma.model.master;
 
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,34 +13,29 @@ import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
-
-@Table(name ="CITY")
+@Table(name = "CITY")
 @Entity
 
 public class City extends AbstractModel {
 
 	@Id
-	@Column(name ="ID")
+	@Column(name = "ID")
 	private String id;
-	
-	
-	@Column(name ="NAME")
+
+	@Column(name = "NAME")
 	private String name;
-	
-	
+
 	@ManyToOne
-	@JoinColumn(name ="STATE_ID")
+	@JoinColumn(name = "STATE_ID")
 	private State state;
-	
-	
-	@Column(name ="COUNTRY_ID")
-	private String country;
-	
-	
-	@Column(name ="ORDER_NUM")
+
+	@ManyToOne
+	@JoinColumn(name = "COUNTRY_ID")
+	private Country country;
+
+	@Column(name = "ORDER_NUM")
 	private Integer ordernum;
-	
-	
+
 	@Column(name = "CREATED_BY")
 	private String createdBy;
 
@@ -49,7 +43,6 @@ public class City extends AbstractModel {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdOn;
 
-	
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
 
@@ -81,11 +74,11 @@ public class City extends AbstractModel {
 		this.state = state;
 	}
 
-	public String getCountry() {
+	public Country getCountry() {
 		return country;
 	}
 
-	public void setCountry(String country) {
+	public void setCountry(Country country) {
 		this.country = country;
 	}
 
@@ -129,6 +122,4 @@ public class City extends AbstractModel {
 		this.updatedOn = updatedOn;
 	}
 
-	
-	
 }

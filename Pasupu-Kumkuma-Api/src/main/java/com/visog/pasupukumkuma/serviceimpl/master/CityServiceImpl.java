@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.dao.master.CityDao;
 import com.visog.pasupukumkuma.model.master.City;
+import com.visog.pasupukumkuma.model.master.Country;
 import com.visog.pasupukumkuma.model.master.State;
 import com.visog.pasupukumkuma.req.CityReq;
 import com.visog.pasupukumkuma.res.CityRes;
@@ -27,23 +28,26 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 	public Boolean saveCity(CityReq req) {
 
 		City cites = new City();
+		Country country =new Country();
+		State state = new State();
 		cites.setName(req.getName());
-		cites.setCountry(req.getCountry());
-
-		City city = new City();
-		city.setId(req.getState());
+	     country.setId(req.getCountry());
+		
+		state.setId(req.getState());
+		cites.setCountry(country);
+		cites.setState(state);
 		
 		DaoUtils.setEntityCreateAuditColumns(cites);
 
 		if (dao.isCityExists(req.getName())) {
 
-			logger.info("State already exist : " + cites.getId());
+			logger.info("city already exist : " + cites.getId());
 			return false;
 
 		} else {
 			dao.save(cites);
 
-			logger.info("state created successfully : " + cites.getId());
+			logger.info("city created successfully : " + cites.getId());
 			return true;
 
 		}
@@ -62,19 +66,21 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 		if (cites.getName().toLowerCase().trim().equals(req.getName().toLowerCase().trim())
 				|| (!dao.isCityExists(req.getName()))) {
 
-			cites.setName(req.getName());
-
+			Country country =new Country();
 			State state = new State();
+			cites.setName(req.getName());
+		     country.setId(req.getCountry());
+			
 			state.setId(req.getState());
-
+			cites.setCountry(country);
 			cites.setState(state);
 
 			dao.update(cites);
-			logger.info("state updated successfully : " + cites.getId());
+			logger.info("city updated successfully : " + cites.getId());
 			return true;
 
 		} else {
-			logger.info("states already exist : " + cites.getId());
+			logger.info("city already exist : " + cites.getId());
 			return false;
 
 		}
@@ -88,7 +94,7 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 	public List<CityRes> getCity() {
 		List<City> cites = dao.getCity();
 
-		List<CityRes> stateList = new ArrayList<>();
+		List<CityRes> cityList = new ArrayList<>();
 		CityRes cityRes = null;
 
 		for (City city : cites) {
@@ -96,10 +102,11 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 			cityRes.setId(city.getId());
 			cityRes.setName(city.getName());
 			cityRes.setState(city.getState().getId());
-			stateList.add(cityRes);
+			cityRes.setCountry(city.getCountry().getId());
+			cityList.add(cityRes);
 		}
 
-		return stateList;
+		return cityList;
 	}
 
 	/**
@@ -123,8 +130,5 @@ private static final Logger logger = Logger.getLogger(CityServiceImpl.class);
 	public Boolean deleteCity(String stateId) {
 		return (dao.delete(City.class, stateId) != 0);
 	}
-
-	
-
 
 }

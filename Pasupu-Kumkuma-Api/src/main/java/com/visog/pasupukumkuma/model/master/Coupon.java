@@ -5,45 +5,25 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
+@Table(name = "COUPON")
 @Entity
-@Table(name = "PUJAS")
-public class Puja extends AbstractModel{
-	
-	@Id
-	@Column(name="ID")
-	private String id;
-	
-	@Column(name="NAME")
-	private String name;
-	
-	@Column(name="DESCRIPTION")
-	private String description;
+public class Coupon extends AbstractModel {
 
-	@Column(name = "PRICE")
-	private String price;
-	
-	@Column(name="DURATION")
-	private String duration;
-	
-	@Column(name="PHOTO")
-	private String photo;
-	
-	
-	@Column(name="PUJA_COUNT")
-	private Integer pujaCount;
-	
-	@ManyToOne
-	@JoinColumn(name="STATUS_ID")
-	private Status status;
-	
+	@Id
+	@Column(name = "ID")
+	private String id;
+
+	@Column(name = "NAME")
+	private String name;
+
+	@Column(name = "DESCRIPTION")
+	private String description;
 
 	@Column(name = "CREATED_BY")
 	private String createdBy;
@@ -59,24 +39,6 @@ public class Puja extends AbstractModel{
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedOn;
 
-	
-	public Integer getPujaCount() {
-		return pujaCount;
-	}
-
-	public void setPujaCount(Integer pujaCount) {
-		this.pujaCount = pujaCount;
-	}
-
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
-	}
-
-	
 	public String getId() {
 		return id;
 	}
@@ -99,30 +61,6 @@ public class Puja extends AbstractModel{
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getPrice() {
-		return price;
-	}
-
-	public void setPrice(String price) {
-		this.price = price;
-	}
-
-	public String getDuration() {
-		return duration;
-	}
-
-	public void setDuration(String duration) {
-		this.duration = duration;
-	}
-
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
 	}
 
 	public String getCreatedBy() {
@@ -157,6 +95,4 @@ public class Puja extends AbstractModel{
 		this.updatedOn = updatedOn;
 	}
 
-
-	
 }
