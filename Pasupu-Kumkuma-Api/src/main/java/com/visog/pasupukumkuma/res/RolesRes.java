@@ -5,7 +5,9 @@ package com.visog.pasupukumkuma.res;
 public class RolesRes {
 
 	private String id;
+	
 	private String name;
+	
 	private String description;
 
 	public String getName() {

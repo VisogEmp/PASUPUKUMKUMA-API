@@ -35,7 +35,7 @@ public class PujaSamagriServiceImpl implements PujaSamagriService{
 		pujasamagri.setName(req.getName());
 		pujasamagri.setDescription(req.getDescription());
 		pujasamagri.setPrice(req.getPrice());
-		pujasamagri.setDuration(req.getPhoto());
+		pujasamagri.setDuration(req.getDuration());
 		pujasamagri.setPhoto(req.getPhoto());
 		pujasamagri.setSamagriCount(req.getSamagriCount());
 		

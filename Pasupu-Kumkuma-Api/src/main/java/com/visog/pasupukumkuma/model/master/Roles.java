@@ -34,7 +34,7 @@ public class Roles extends AbstractModel {
 
 	@Column(name = "UPDATED_BY")
 	private String updatedBy;
-
+ 
 	@Column(name = "UPDATED_ON")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedOn;

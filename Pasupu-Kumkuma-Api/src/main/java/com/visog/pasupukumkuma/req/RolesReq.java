@@ -4,6 +4,7 @@ package com.visog.pasupukumkuma.req;
 public class RolesReq {
 
 	private String name;
+	
 	private String description;
 
 	public String getName() {

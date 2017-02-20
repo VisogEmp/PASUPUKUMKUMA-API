@@ -2,10 +2,13 @@ package com.visog.pasupukumkuma.model.master;
 
 import java.util.Date;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -33,8 +36,13 @@ public class Puja extends AbstractModel{
 	@Column(name="DURATION")
 	private String duration;
 	
-	@Column(name="PHOTO")
+	
+	/*@Lob
+	@Basic(fetch=FetchType.LAZY)*/
+	//@Column(name="PHOTO")
 	private String photo;
+	//private byte[] photo;
+	
 	
 	
 	@Column(name="PUJA_COUNT")

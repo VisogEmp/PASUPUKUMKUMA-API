@@ -1,3 +1,4 @@
+
 package com.visog.pasupukumkuma.constants;
 
 public interface Status {

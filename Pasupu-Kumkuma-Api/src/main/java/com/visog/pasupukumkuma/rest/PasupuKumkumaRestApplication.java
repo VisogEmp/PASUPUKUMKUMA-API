@@ -14,7 +14,6 @@ import com.visog.pasupukumkuma.rest.controller.master.RaasiController;
 import com.visog.pasupukumkuma.rest.controller.master.PujaController;
 import com.visog.pasupukumkuma.rest.controller.master.PujaSamagriController;
 
-import com.visog.pasupukumkuma.rest.controller.master.PujaSamagriPujaController;
 
 //github.com/VisogEmp/PASUPUKUMKUMA-API.git
 import com.visog.pasupukumkuma.rest.controller.master.RolesController;
@@ -40,7 +39,7 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(PujaController.class);
 		classes.add(StatusController.class);
 		classes.add(PujaSamagriController.class);
-		classes.add(PujaSamagriPujaController.class);
+		
 	}
 
 	public Set<Object> getSingletons() {
