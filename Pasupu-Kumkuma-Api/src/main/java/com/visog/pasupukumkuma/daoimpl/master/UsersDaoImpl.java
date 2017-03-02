@@ -13,7 +13,6 @@ import org.apache.log4j.Logger;
 import com.visog.pasupukumkuma.dao.AbstractDao;
 import com.visog.pasupukumkuma.dao.master.StateDao;
 import com.visog.pasupukumkuma.model.master.State;
-import com.visog.pasupukumkuma.model.master.Users;
 
 
 @Singleton
