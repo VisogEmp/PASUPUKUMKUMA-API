@@ -1,14 +1,21 @@
 package com.visog.pasupukumkuma.model.master;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
 
 
 @Table(name ="GENDER")
+@Entity
 public class Gender extends AbstractModel {
 
+	@Id
+	@Column(name ="ID")
+	private String id;
+	
 	@Column(name ="NAME")
 	 private String name;
 	
