@@ -9,18 +9,20 @@ import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
 import com.visog.pasupukumkuma.dao.AbstractDao;
-import com.visog.pasupukumkuma.dao.transactional.UsersDao;
+import com.visog.pasupukumkuma.dao.transactional.ContactDao;
+import com.visog.pasupukumkuma.model.transactional.Contact;
 import com.visog.pasupukumkuma.model.transactional.Users;
+
 
 @Singleton
 @Transactional
-public class UsersDaoImpl extends AbstractDao implements UsersDao{
-
-	public List<Users> getUsers() {
+public class ContactDaoImpl extends AbstractDao implements ContactDao {
+	
+public List<Contact> getContacts() {
 		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Users> q = cb.createQuery(Users.class);
-		Root<Users> c = q.from(Users.class);
+		CriteriaQuery<Contact> q = cb.createQuery(Contact.class);
+		Root<Contact> c = q.from(Contact.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
 		
@@ -36,5 +38,9 @@ public class UsersDaoImpl extends AbstractDao implements UsersDao{
 		return (em.createQuery(q).getSingleResult() != 0L);
 
 	}
+
+	
+	
+	
 
 }
