@@ -1,4 +1,4 @@
-package com.visog.pasupukumkuma.model.master;
+package com.visog.pasupukumkuma.model.transactional;
 
 import java.util.Date;
 
@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.visog.pasupukumkuma.model.AbstractModel;
+import com.visog.pasupukumkuma.model.master.Puja;
 
 @Table(name = "cart_orders")
 @Entity

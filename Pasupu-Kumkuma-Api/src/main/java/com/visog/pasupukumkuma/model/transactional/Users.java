@@ -20,6 +20,7 @@ import com.visog.pasupukumkuma.model.master.Status;
 
 
 @Table(name ="USERS")
+@Entity
 public class Users  extends AbstractModel {
 
 	@Id
