@@ -120,7 +120,7 @@ CREATE TABLE contact
   PRIMARY KEY (id)
 );
 CREATE TABLE user_requests (
-id VARCHAR(37) NOT NULL,
+  id VARCHAR(37) NOT NULL,
   request_id varchar(255) NOT NULL,
   subject text NOT NULL,
   message longtext NOT NULL,
