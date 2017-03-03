@@ -112,7 +112,7 @@ CREATE TABLE contact
     PHONE_NO   VARCHAR(15),
   subject text NOT NULL,
   query longtext NOT NULL,
-  datetime datetime NOT NULL,
+  datetime TIMESTAMP NOT NULL,
   CREATED_BY    VARCHAR(37) NOT NULL,
 	CREATED_ON    TIMESTAMP NOT NULL,
 	UPDATED_BY    VARCHAR(37),

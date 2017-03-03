@@ -15,34 +15,33 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.constants.Status;
-import com.visog.pasupukumkuma.req.RolesReq;
-import com.visog.pasupukumkuma.req.transactional.CartOrdersReq;
+import com.visog.pasupukumkuma.req.CountryReq;
+import com.visog.pasupukumkuma.req.transactional.ContactReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
-import com.visog.pasupukumkuma.rest.controller.master.RolesController;
-import com.visog.pasupukumkuma.service.master.RolesService;
-import com.visog.pasupukumkuma.service.transactional.CartOrdersService;
+import com.visog.pasupukumkuma.rest.controller.master.CountryController;
+import com.visog.pasupukumkuma.service.master.CountryService;
+import com.visog.pasupukumkuma.service.transactional.ContactService;
 
 @Path("/transaction")
 @Produces(MediaType.APPLICATION_JSON)
-public class CartOrdersController {
+public class ContactController {
 	
-	private static final Logger logger = Logger.getLogger(CartOrdersController.class);
+	private static final Logger logger = Logger.getLogger(ContactController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
-
+	
 	@Inject
-	private CartOrdersService service;
-
+	private ContactService service;
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/CartOrders")
-	public PasupuKumkumaResponse createCartOrders(CartOrdersReq req) {
+	@Path("/contact")
+	public PasupuKumkumaResponse createContact(ContactReq req) {
 
-		service.saveCartOrders(req);
+		service.saveContact(req);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("CartOrders saved succcessfully");
+		pasupuKumkumaResponse.setMessage("contact saved succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -50,46 +49,15 @@ public class CartOrdersController {
 
 	}
 
-	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/cartorders/{userId}")
-	public PasupuKumkumaResponse updateCartOrders(@PathParam("userId") String userId, CartOrdersReq req) {
+	@Path("/contact/{contactId}")
+	public PasupuKumkumaResponse updateContact(@PathParam("contactId") String contactId, ContactReq req) {
 
-		service.updateCartOrders(req, userId);
-
-		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("CartOrder updated succcessfully");
-		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
-		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-
-		return pasupuKumkumaResponse;
-
-	}
-
-	
-	@GET
-	@Path("/cartorders")
-	public PasupuKumkumaResponse getCartOrders() {
+		service.updateContact(req, contactId);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getCartOrders());
-		pasupuKumkumaResponse.setMessage("CartOrders fetched succcessfully");
-		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
-		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-
-		return pasupuKumkumaResponse;
-
-	}
-
-
-	@GET
-	@Path("/cartorder/{userId}")
-	public PasupuKumkumaResponse getCartOrder(@PathParam("userId") String userId) {
-
-		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getCartOrder(userId));
-		pasupuKumkumaResponse.setMessage("cartorders fetched succcessfully");
+		pasupuKumkumaResponse.setMessage("contact updated succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -97,20 +65,46 @@ public class CartOrdersController {
 
 	}
 	
+	@GET
+	@Path("/contact")
+	public PasupuKumkumaResponse getContacts() {
 
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
+		pasupuKumkumaResponse.setData(service.getContacts());
+		pasupuKumkumaResponse.setMessage("contacts fetched succcessfully");
+		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		return pasupuKumkumaResponse;
+
+	}
+
+	@GET
+	@Path("/contact/{contactId}")
+	public PasupuKumkumaResponse getRole(@PathParam("contactId") String contactId) {
+
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
+		pasupuKumkumaResponse.setData(service.getContacts(contactId));
+		pasupuKumkumaResponse.setMessage("contact fetched succcessfully");
+		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		return pasupuKumkumaResponse;
+
+	}
 	
 	@DELETE
-	@Path("/cartorders/{userId}")
-	public PasupuKumkumaResponse deleteCartOrders(@PathParam("userId") String userId) {
+	@Path("/contact/{contactid}")
+	public PasupuKumkumaResponse deleteRosle(@PathParam("contactid") String contactId) {
 		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
-		if(service.deleteCartOrders(userId)) {
-			pasupuKumkumaResponse.setMessage("cartorder deleted succcessfully");
+		if(service.deleteContacts(contactId)) {
+			pasupuKumkumaResponse.setMessage("contact deleted succcessfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			pasupuKumkumaResponse.setMessage("Failed to delete he cart orders");
+			pasupuKumkumaResponse.setMessage("Failed to delete the contact");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
@@ -120,5 +114,10 @@ public class CartOrdersController {
 	
 	
 	}
+
+	
+
+
+
 
 }
