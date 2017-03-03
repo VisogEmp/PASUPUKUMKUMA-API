@@ -31,10 +31,10 @@ public class PujaOrder extends AbstractModel {
 	private String pujaId;
 	
 	@Column(name =" amount")
-	private String alternativeEmail;
+	private String ammount;
 	
-    @Column(name ="PASSWORD")
-	private String password;
+    @Column(name =" payed")
+	private String  payed;
 	
     @Column(name ="PHONE_NO")
 	private String phoneNo;
@@ -45,24 +45,7 @@ public class PujaOrder extends AbstractModel {
     @Column(name ="BIRTH_PLACE")
 	private String birthPlace;
 	
-    @Column(name ="BIRTH_TIME")
-	private String birthTime;
-	
-	@ManyToOne
-	@JoinColumn(name ="RAASI_ID")
-	private Raasi rassi;
-	
-	@ManyToOne
-	@JoinColumn(name ="NAKSHATRAM_ID")
-	private Nakshatram nakshatram;
-	
-	@ManyToOne
-	@JoinColumn(name ="ROLE_ID")
-	private Roles role;
-	
-	@ManyToOne
-	@JoinColumn(name ="GENDER_ID")
-	private Gender gender;
+   
 	
 	@ManyToOne
 	@JoinColumn(name ="STATUS_ID")
