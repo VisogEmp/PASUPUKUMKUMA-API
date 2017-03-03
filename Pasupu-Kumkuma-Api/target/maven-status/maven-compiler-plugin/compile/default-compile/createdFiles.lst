@@ -6,6 +6,7 @@ com\visog\pasupukumkuma\service\master\GenderService.class
 com\visog\pasupukumkuma\dao\master\StateDao.class
 com\visog\pasupukumkuma\utils\DateUtils.class
 com\visog\pasupukumkuma\serviceimpl\master\CouponTypeServiceImpl.class
+com\visog\pasupukumkuma\model\transactional\PujaOrder.class
 com\visog\pasupukumkuma\req\StatusReq.class
 com\visog\pasupukumkuma\dao\master\CityDao.class
 com\visog\pasupukumkuma\service\master\RaasiService.class
@@ -23,6 +24,7 @@ com\visog\pasupukumkuma\dao\SuperAdminDao.class
 com\visog\pasupukumkuma\service\master\NakshatramService.class
 com\visog\pasupukumkuma\constants\UploadFileService.class
 com\visog\pasupukumkuma\utils\SecurityUtils$1.class
+com\visog\pasupukumkuma\res\UsersRes.class
 com\visog\pasupukumkuma\rest\controller\master\GenderController.class
 com\visog\pasupukumkuma\model\master\CouponType.class
 com\visog\pasupukumkuma\res\AccessLinksResponse.class
@@ -32,20 +34,28 @@ com\visog\pasupukumkuma\rest\PasupuKumkumaRestApplication.class
 com\visog\pasupukumkuma\dao\master\PujaSamagriDao.class
 com\visog\pasupukumkuma\servlet\ContextListener.class
 com\visog\pasupukumkuma\daoimpl\master\CouponDaoImpl.class
+com\visog\pasupukumkuma\dao\transactional\UsersDao.class
 com\visog\pasupukumkuma\rest\controller\master\PujaSamagriController.class
 com\visog\pasupukumkuma\service\master\CityService.class
+com\visog\pasupukumkuma\serviceimpl\transactional\UsersServiceImpl.class
 com\visog\pasupukumkuma\serviceimpl\master\GenderServiceImpl.class
+com\visog\pasupukumkuma\dao\master\UsersDao.class
 com\visog\pasupukumkuma\utils\AppUtils.class
 com\visog\pasupukumkuma\res\CouponTypeRes.class
 com\visog\pasupukumkuma\req\GenderReq.class
 com\visog\pasupukumkuma\daoimpl\master\CountryDaoImpl.class
+com\visog\pasupukumkuma\model\master\Users.class
 com\visog\pasupukumkuma\service\AdminService.class
 com\visog\pasupukumkuma\dao\master\CouponTypeDao.class
 com\visog\pasupukumkuma\model\master\Puja.class
+com\visog\pasupukumkuma\res\transactional\UsersRes.class
 com\visog\pasupukumkuma\daoimpl\master\PujaDaoImpl.class
 com\visog\pasupukumkuma\serviceimpl\master\RaasiSeviceImpl.class
+com\visog\pasupukumkuma\req\UsersReq.class
 com\visog\pasupukumkuma\req\CityReq.class
+com\visog\pasupukumkuma\daoimpl\transactional\UsersDaoImpl.class
 com\visog\pasupukumkuma\req\CouponReq.class
+com\visog\pasupukumkuma\rest\controller\transactional\UsersController.class
 com\visog\pasupukumkuma\service\master\CouponService.class
 com\visog\pasupukumkuma\res\CountryRes.class
 com\visog\pasupukumkuma\serviceimpl\master\CouponServiceImpl.class
@@ -56,6 +66,7 @@ com\visog\pasupukumkuma\rest\controller\SuperAdminController.class
 com\visog\pasupukumkuma\serviceimpl\master\PujaServiceImpl.class
 com\visog\pasupukumkuma\model\master\Raasi.class
 com\visog\pasupukumkuma\model\master\Status.class
+com\visog\pasupukumkuma\req\transactional\UsersReq.class
 com\visog\pasupukumkuma\model\master\Nakshatram.class
 com\visog\pasupukumkuma\req\PujaSamagriReq.class
 com\visog\pasupukumkuma\daoimpl\master\PujaSamagriDaoImpl.class
@@ -74,6 +85,7 @@ com\visog\pasupukumkuma\req\StateReq.class
 com\visog\pasupukumkuma\res\RaasiRes.class
 com\visog\pasupukumkuma\service\SuperAdminService.class
 com\visog\pasupukumkuma\dao\master\CouponDao.class
+com\visog\pasupukumkuma\model\transactional\Users.class
 com\visog\pasupukumkuma\serviceimpl\SuperAdminServiceImpl.class
 com\visog\pasupukumkuma\utils\PropertyUtil.class
 com\visog\pasupukumkuma\utils\SecurityUtils.class
@@ -97,6 +109,7 @@ com\visog\pasupukumkuma\serviceimpl\master\StateServiceImpl.class
 com\visog\pasupukumkuma\utils\ParamUtils.class
 com\visog\pasupukumkuma\req\NakshatramReq.class
 com\visog\pasupukumkuma\daoimpl\master\RolesDaoImpl.class
+com\visog\pasupukumkuma\service\transactional\UsersService.class
 com\visog\pasupukumkuma\dao\AbstractDao.class
 com\visog\pasupukumkuma\model\master\Gender.class
 com\visog\pasupukumkuma\utils\ExceptionUtils.class
@@ -117,6 +130,7 @@ com\visog\pasupukumkuma\rest\client\PasupuKumkumaRestClient.class
 com\visog\pasupukumkuma\res\PujaSamagriRes.class
 com\visog\pasupukumkuma\service\master\RolesService.class
 com\visog\pasupukumkuma\daoimpl\master\GenderDaoImpl.class
+com\visog\pasupukumkuma\daoimpl\master\UsersDaoImpl.class
 com\visog\pasupukumkuma\service\master\StateService.class
 com\visog\pasupukumkuma\req\RolesReq.class
 com\visog\pasupukumkuma\utils\RandomUtils.class
