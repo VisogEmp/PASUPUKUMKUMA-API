@@ -42,6 +42,7 @@ public class Users  extends AbstractModel {
     @Column(name ="PHONE_NO")
 	private String phoneNo;
 	
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name ="DOB")
 	private Date dob;
 	

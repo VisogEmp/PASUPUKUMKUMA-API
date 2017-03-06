@@ -19,6 +19,7 @@ import com.visog.pasupukumkuma.rest.controller.master.PujaSamagriController;
 import com.visog.pasupukumkuma.rest.controller.master.RolesController;
 import com.visog.pasupukumkuma.rest.controller.master.StateController;
 import com.visog.pasupukumkuma.rest.controller.master.StatusController;
+import com.visog.pasupukumkuma.rest.controller.transactional.UsersController;
 
 public class PasupuKumkumaRestApplication extends Application {
 	
@@ -39,6 +40,7 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(PujaController.class);
 		classes.add(StatusController.class);
 		classes.add(PujaSamagriController.class);
+		classes.add(UsersController.class);
 		
 	}
 

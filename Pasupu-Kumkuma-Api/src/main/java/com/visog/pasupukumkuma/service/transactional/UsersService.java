@@ -2,20 +2,20 @@ package com.visog.pasupukumkuma.service.transactional;
 
 import java.util.List;
 
-import com.visog.pasupukumkuma.req.StateReq;
-import com.visog.pasupukumkuma.res.StateRes;
+import com.visog.pasupukumkuma.req.transactional.UsersReq;
+import com.visog.pasupukumkuma.res.transactional.UsersRes;
 
 public interface UsersService {
 	
-	 public Boolean saveUsers(StateReq req);
+	    public Boolean saveUsers(UsersReq req);
 		
-		public Boolean updateUsers(StateReq req, String stateId);
+		public Boolean updateUsers(UsersReq req, String usersId);
 		
-		public List<StateRes> getUsers();
+		public List<UsersRes> getUsers();
 		
-		public StateRes getUsers(String id);
+		public UsersRes getUsers(String id);
 		
-		public Boolean deleteUsers(String stateId);
+		public Boolean deleteUsers(String usersId);
 
 
 }

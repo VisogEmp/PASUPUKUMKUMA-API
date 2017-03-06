@@ -2,6 +2,8 @@ package com.visog.pasupukumkuma.req.transactional;
 
 import java.util.Date;
 
+import com.visog.pasupukumkuma.model.master.Status;
+
 
 public class UsersReq {
 	
@@ -21,11 +23,17 @@ public class UsersReq {
 	
 	private String birthTime;
 	
-	private String rassi;
+	private String raasi;
 	
 	private String nakshatram;
 	
 	private String role;
+	
+	private String gender;
+	
+	private String status;
+	
+	
 
 	public String getName() {
 		return name;
@@ -91,12 +99,12 @@ public class UsersReq {
 		this.birthTime = birthTime;
 	}
 
-	public String getRassi() {
-		return rassi;
+	public String getRaasi() {
+		return raasi;
 	}
 
-	public void setRassi(String rassi) {
-		this.rassi = rassi;
+	public void setRaasi(String raasi) {
+		this.raasi = raasi;
 	}
 
 	public String getNakshatram() {
@@ -113,6 +121,22 @@ public class UsersReq {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	
