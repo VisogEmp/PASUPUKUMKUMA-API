@@ -6,10 +6,7 @@ com\visog\pasupukumkuma\service\master\GenderService.class
 com\visog\pasupukumkuma\dao\master\StateDao.class
 com\visog\pasupukumkuma\utils\DateUtils.class
 com\visog\pasupukumkuma\serviceimpl\master\CouponTypeServiceImpl.class
-<<<<<<< HEAD
-=======
 com\visog\pasupukumkuma\dao\transactional\ContactDao.class
->>>>>>> branch 'master' of https://github.com/VisogEmp/PASUPUKUMKUMA-API.git
 com\visog\pasupukumkuma\model\transactional\PujaOrder.class
 com\visog\pasupukumkuma\req\StatusReq.class
 com\visog\pasupukumkuma\dao\master\CityDao.class
@@ -27,15 +24,17 @@ com\visog\pasupukumkuma\rest\controller\AdminController.class
 com\visog\pasupukumkuma\constants\Status.class
 com\visog\pasupukumkuma\dao\SuperAdminDao.class
 com\visog\pasupukumkuma\service\master\NakshatramService.class
+com\visog\pasupukumkuma\serviceimpl\transactional\CartOrdersServiceImpl.class
 com\visog\pasupukumkuma\constants\UploadFileService.class
 com\visog\pasupukumkuma\utils\SecurityUtils$1.class
-com\visog\pasupukumkuma\res\UsersRes.class
 com\visog\pasupukumkuma\rest\controller\master\GenderController.class
 com\visog\pasupukumkuma\model\master\CouponType.class
 com\visog\pasupukumkuma\res\AccessLinksResponse.class
 com\visog\pasupukumkuma\serviceimpl\AdminServiceImpl.class
 com\visog\pasupukumkuma\res\NakshatramRes.class
 com\visog\pasupukumkuma\rest\PasupuKumkumaRestApplication.class
+com\visog\pasupukumkuma\service\transactional\CartOrdersService.class
+com\visog\pasupukumkuma\model\transactional\CartOrders.class
 com\visog\pasupukumkuma\dao\master\PujaSamagriDao.class
 com\visog\pasupukumkuma\servlet\ContextListener.class
 com\visog\pasupukumkuma\daoimpl\master\CouponDaoImpl.class
@@ -44,26 +43,23 @@ com\visog\pasupukumkuma\rest\controller\master\PujaSamagriController.class
 com\visog\pasupukumkuma\service\master\CityService.class
 com\visog\pasupukumkuma\serviceimpl\transactional\UsersServiceImpl.class
 com\visog\pasupukumkuma\serviceimpl\master\GenderServiceImpl.class
-<<<<<<< HEAD
-com\visog\pasupukumkuma\dao\master\UsersDao.class
-=======
 com\visog\pasupukumkuma\serviceimpl\transactional\ContactServiceImpl.class
->>>>>>> branch 'master' of https://github.com/VisogEmp/PASUPUKUMKUMA-API.git
 com\visog\pasupukumkuma\utils\AppUtils.class
 com\visog\pasupukumkuma\res\CouponTypeRes.class
+com\visog\pasupukumkuma\dao\transactional\CartOrdersDao.class
 com\visog\pasupukumkuma\req\GenderReq.class
 com\visog\pasupukumkuma\daoimpl\master\CountryDaoImpl.class
-com\visog\pasupukumkuma\model\master\Users.class
 com\visog\pasupukumkuma\service\AdminService.class
 com\visog\pasupukumkuma\dao\master\CouponTypeDao.class
 com\visog\pasupukumkuma\model\master\Puja.class
 com\visog\pasupukumkuma\res\transactional\UsersRes.class
 com\visog\pasupukumkuma\daoimpl\master\PujaDaoImpl.class
 com\visog\pasupukumkuma\serviceimpl\master\RaasiSeviceImpl.class
-com\visog\pasupukumkuma\req\UsersReq.class
 com\visog\pasupukumkuma\req\CityReq.class
 com\visog\pasupukumkuma\daoimpl\transactional\UsersDaoImpl.class
+com\visog\pasupukumkuma\req\transactional\CartOrdersReq.class
 com\visog\pasupukumkuma\req\CouponReq.class
+com\visog\pasupukumkuma\daoimpl\transactional\CartOrdersImpl.class
 com\visog\pasupukumkuma\rest\controller\transactional\UsersController.class
 com\visog\pasupukumkuma\service\master\CouponService.class
 com\visog\pasupukumkuma\res\CountryRes.class
@@ -75,10 +71,7 @@ com\visog\pasupukumkuma\rest\controller\SuperAdminController.class
 com\visog\pasupukumkuma\serviceimpl\master\PujaServiceImpl.class
 com\visog\pasupukumkuma\model\master\Raasi.class
 com\visog\pasupukumkuma\model\master\Status.class
-<<<<<<< HEAD
-=======
 com\visog\pasupukumkuma\model\transactional\Contact.class
->>>>>>> branch 'master' of https://github.com/VisogEmp/PASUPUKUMKUMA-API.git
 com\visog\pasupukumkuma\req\transactional\UsersReq.class
 com\visog\pasupukumkuma\model\master\Nakshatram.class
 com\visog\pasupukumkuma\req\PujaSamagriReq.class
@@ -90,6 +83,7 @@ com\visog\pasupukumkuma\rest\controller\master\PujaController.class
 com\visog\pasupukumkuma\service\master\CountryService.class
 com\visog\pasupukumkuma\rest\controller\master\RolesController.class
 com\visog\pasupukumkuma\daoimpl\transactional\ContactDaoImpl.class
+com\visog\pasupukumkuma\dao\transactional\PujaOrderDao.class
 com\visog\pasupukumkuma\dao\master\PujaDao.class
 com\visog\pasupukumkuma\dao\master\RoleDao.class
 com\visog\pasupukumkuma\utils\PasswordSecurityUtils.class
@@ -142,7 +136,9 @@ com\visog\pasupukumkuma\serviceimpl\master\CountryServiceImpl.class
 com\visog\pasupukumkuma\dao\master\GenderDao.class
 com\visog\pasupukumkuma\res\CityRes.class
 com\visog\pasupukumkuma\rest\client\PasupuKumkumaRestClient.class
+com\visog\pasupukumkuma\res\transactional\CartOrdersRes.class
 com\visog\pasupukumkuma\res\PujaSamagriRes.class
+com\visog\pasupukumkuma\rest\controller\transactional\CartOrdersController.class
 com\visog\pasupukumkuma\service\master\RolesService.class
 com\visog\pasupukumkuma\req\transactional\ContactReq.class
 com\visog\pasupukumkuma\daoimpl\master\GenderDaoImpl.class
