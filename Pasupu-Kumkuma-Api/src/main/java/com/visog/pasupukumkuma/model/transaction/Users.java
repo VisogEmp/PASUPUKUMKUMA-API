@@ -1,4 +1,4 @@
-package com.visog.pasupukumkuma.model.transactional;
+package com.visog.pasupukumkuma.model.transaction;
 
 import java.util.Date;
 
@@ -18,59 +18,60 @@ import com.visog.pasupukumkuma.model.master.Raasi;
 import com.visog.pasupukumkuma.model.master.Roles;
 import com.visog.pasupukumkuma.model.master.Status;
 
-
-@Table(name ="USERS")
+@Table(name = "USERS")
 @Entity
-public class Users  extends AbstractModel {
+public class Users extends AbstractModel {
 
 	@Id
-	@Column(name ="ID")
+	@Column(name = "ID")
 	private String id;
-	
-	@Column(name ="NAME")
-	private String name;
-	
-	@Column(name ="EMAIL")
-	private String email;
-	
-	@Column(name ="ALTERNATIVE_EMAIL")
-	private String alternativeEmail;
-	
-    @Column(name ="PASSWORD")
-	private String password;
-	
-    @Column(name ="PHONE_NO")
-	private String phoneNo;
-	
-    @Column(name ="DOB")
-	private Date dob;
-	
-    @Column(name ="BIRTH_PLACE")
-	private String birthPlace;
-	
-    @Column(name ="BIRTH_TIME")
-	private String birthTime;
-	
+
 	@ManyToOne
-	@JoinColumn(name ="RAASI_ID")
-	private Raasi rassi;
-	
-	@ManyToOne
-	@JoinColumn(name ="NAKSHATRAM_ID")
-	private Nakshatram nakshatram;
-	
-	@ManyToOne
-	@JoinColumn(name ="ROLE_ID")
+	@JoinColumn(name = "ROLE_ID")
 	private Roles role;
-	
+
 	@ManyToOne
-	@JoinColumn(name ="GENDER_ID")
+	@JoinColumn(name = "GENDER_ID")
 	private Gender gender;
-	
+
+	@Column(name = "NAME")
+	private String name;
+
+	@Column(name = "EMAIL")
+	private String email;
+
+	@Column(name = " ALTERNATIVE_EMAIL")
+	private String alternativeEmail;
+
+	@Column(name = " PASSWORD")
+	private String password;
+
+	@Column(name = "PHONE_NO")
+	private String phoneNo;
+
+	@Column(name = "DOB")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dob;
+
+	@Column(name = "BIRTH_PLACE")
+	private String birthPlace;
+
+	@Column(name = "BIRTH_TIME")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date birthTime;
+
 	@ManyToOne
-	@JoinColumn(name ="STATUS_ID")
+	@JoinColumn(name = "RAASI_ID")
+	private Raasi raasi;
+
+	@ManyToOne
+	@JoinColumn(name = "NAKSHATRAM_ID")
+	private Nakshatram nakshatram;
+
+	@ManyToOne
+	@JoinColumn(name = "STATUS_ID")
 	private Status status;
-	
+
 	@Column(name = "CREATED_BY")
 	private String createdBy;
 
@@ -91,6 +92,22 @@ public class Users  extends AbstractModel {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public Roles getRole() {
+		return role;
+	}
+
+	public void setRole(Roles role) {
+		this.role = role;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
 	public String getName() {
@@ -149,20 +166,20 @@ public class Users  extends AbstractModel {
 		this.birthPlace = birthPlace;
 	}
 
-	public String getBirthTime() {
+	public Date getBirthTime() {
 		return birthTime;
 	}
 
-	public void setBirthTime(String birthTime) {
+	public void setBirthTime(Date birthTime) {
 		this.birthTime = birthTime;
 	}
 
-	public Raasi getRassi() {
-		return rassi;
+	public Raasi getRaasi() {
+		return raasi;
 	}
 
-	public void setRassi(Raasi rassi) {
-		this.rassi = rassi;
+	public void setRaasi(Raasi raasi) {
+		this.raasi = raasi;
 	}
 
 	public Nakshatram getNakshatram() {
@@ -171,22 +188,6 @@ public class Users  extends AbstractModel {
 
 	public void setNakshatram(Nakshatram nakshatram) {
 		this.nakshatram = nakshatram;
-	}
-
-	public Roles getRole() {
-		return role;
-	}
-
-	public void setRole(Roles role) {
-		this.role = role;
-	}
-
-	public Gender getGender() {
-		return gender;
-	}
-
-	public void setGender(Gender gender) {
-		this.gender = gender;
 	}
 
 	public Status getStatus() {
@@ -229,7 +230,4 @@ public class Users  extends AbstractModel {
 		this.updatedOn = updatedOn;
 	}
 
-	
-	
-	
 }

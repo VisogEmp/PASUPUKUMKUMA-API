@@ -1,39 +1,49 @@
-package com.visog.pasupukumkuma.res.transactional;
+package com.visog.pasupukumkuma.req.transaction;
 
 import java.util.Date;
 
-public class UsersRes {
-	
-	private String id;
-	
-    private String name;
-	
-	private String email;
-	
-	private String alternativeEmail;
-	
-	private String password;
-	
-	private String phoneNo;
-	
-	private Date dob;
-	
-	private String birthPlace;
-	
-	private String birthTime;
-	
-	private String rassi;
-	
-	private String nakshatram;
-	
+public class UsersReq {
+
 	private String role;
 
-	public String getId() {
-		return id;
+	private String gender;
+
+	private String name;
+
+	private String email;
+
+	private String alternativeEmail;
+
+	private String password;
+
+	private String phoneNo;
+
+	private Date dob;
+
+	private String birthPlace;
+
+	private Date birthTime;
+
+	private String raasi;
+
+	private String nakshatram;
+
+	private String status;
+
+	public String getRole() {
+		return role;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	public String getName() {
@@ -92,20 +102,20 @@ public class UsersRes {
 		this.birthPlace = birthPlace;
 	}
 
-	public String getBirthTime() {
+	public Date getBirthTime() {
 		return birthTime;
 	}
 
-	public void setBirthTime(String birthTime) {
+	public void setBirthTime(Date birthTime) {
 		this.birthTime = birthTime;
 	}
 
-	public String getRassi() {
-		return rassi;
+	public String getRaasi() {
+		return raasi;
 	}
 
-	public void setRassi(String rassi) {
-		this.rassi = rassi;
+	public void setRaasi(String raasi) {
+		this.raasi = raasi;
 	}
 
 	public String getNakshatram() {
@@ -116,14 +126,12 @@ public class UsersRes {
 		this.nakshatram = nakshatram;
 	}
 
-	public String getRole() {
-		return role;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	
-	
 
 }
