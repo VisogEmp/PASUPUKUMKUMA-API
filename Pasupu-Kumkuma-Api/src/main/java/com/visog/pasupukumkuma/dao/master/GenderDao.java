@@ -10,6 +10,6 @@ public interface GenderDao extends AbstractDaoI {
 
 	public List<Gender> getGenders();
 
-	public GenderRes getGender(String id);
+	public Boolean isGenderExists(String name);
 
 }

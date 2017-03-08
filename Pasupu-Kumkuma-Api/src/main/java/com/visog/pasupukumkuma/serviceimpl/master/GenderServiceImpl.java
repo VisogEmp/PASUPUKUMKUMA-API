@@ -9,9 +9,13 @@ import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.dao.master.GenderDao;
 import com.visog.pasupukumkuma.model.master.Gender;
+import com.visog.pasupukumkuma.model.master.Roles;
 import com.visog.pasupukumkuma.req.GenderReq;
+import com.visog.pasupukumkuma.req.RolesReq;
 import com.visog.pasupukumkuma.res.GenderRes;
+import com.visog.pasupukumkuma.res.RolesRes;
 import com.visog.pasupukumkuma.service.master.GenderService;
+import com.visog.pasupukumkuma.utils.DaoUtils;
 
 
 public class GenderServiceImpl implements GenderService {
@@ -27,11 +31,15 @@ public class GenderServiceImpl implements GenderService {
 	 */
 
 	public void saveGender(GenderReq req) {
-
 		Gender gender = new Gender();
 		gender.setName(req.getName());
+		gender.setCode(req.getCode());
 		gender.setDescription(req.getDescription());
+
+		DaoUtils.setEntityCreateAuditColumns(gender);
+		
 		dao.save(gender);
+
 		logger.info("Gender created successfully : " + gender.getId());
 	}
 
@@ -43,6 +51,7 @@ public class GenderServiceImpl implements GenderService {
 
 		Gender gender = (Gender) dao.getByKey(Gender.class, genderId);
 		gender.setName(req.getName());
+		gender.setCode(req.getCode());
 		gender.setDescription(req.getDescription());
 		dao.update(gender);
 		logger.info("Gender updated successfully : " + gender.getId());
@@ -53,7 +62,7 @@ public class GenderServiceImpl implements GenderService {
 	 * This method returns all the genders
 	 */
 
-	public List<GenderRes> getGenders() {
+	public List<GenderRes> getGender() {
 
 		List<Gender> genders = dao.getGenders();
 
@@ -63,19 +72,33 @@ public class GenderServiceImpl implements GenderService {
 		for (Gender gender : genders) {
 			genderRes = new GenderRes();
 			genderRes.setId(gender.getId());
+			genderRes.setName(gender.getName());
+			genderRes.setCode(gender.getCode());
+			genderRes.setDescription(gender.getDescription());
 			genderList.add(genderRes);
 		}
 
 		return genderList;
-
 	}
 
 	/**
-	 * This method returns a gender
+	 * This method returns Gender Details for the given gender id  
 	 */
 	public GenderRes getGender(String id) {
-	
-		return dao.getGender(id);
+		Gender gender = (Gender) dao.getByKey(Gender.class, id);
+		GenderRes genderRes = new GenderRes();
+		genderRes.setId(gender.getId());
+		genderRes.setName(gender.getName());
+		genderRes.setCode(gender.getCode());
+		genderRes.setDescription(gender.getDescription());
+		return genderRes;
 	}
 
+	/**
+	 * This method deletes the given gender  
+	 */
+	public Boolean deleteGender(String genderId) {
+		return (dao.delete(Gender.class, genderId) != 0);
+		
+	}
 }

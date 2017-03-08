@@ -5,6 +5,8 @@ public class GenderRes {
 	private String id;
 
 	private String name;
+	
+	private String code;
 
 	private String description;
 
@@ -22,6 +24,15 @@ public class GenderRes {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getDescription() {
