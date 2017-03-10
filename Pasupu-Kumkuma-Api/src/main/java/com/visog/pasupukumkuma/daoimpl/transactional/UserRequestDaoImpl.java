@@ -8,24 +8,23 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 
-import org.apache.log4j.Logger;
-
 import com.visog.pasupukumkuma.dao.AbstractDao;
-import com.visog.pasupukumkuma.dao.transactional.UsersDao;
-import com.visog.pasupukumkuma.model.transactional.Users;
+import com.visog.pasupukumkuma.dao.transactional.UserRequestDao;
+import com.visog.pasupukumkuma.model.transactional.UserRequest;
 
 @Singleton
 @Transactional
-public class UsersDaoImpl extends AbstractDao implements UsersDao {
+public class UserRequestDaoImpl extends AbstractDao implements UserRequestDao {
 
-	private static final Logger logger = Logger.getLogger(UsersDaoImpl.class);
+	public List<UserRequest> getUserRequests() {
 
-	public List<Users> getUsers() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Users> q = cb.createQuery(Users.class);
-		Root<Users> c = q.from(Users.class);
+		CriteriaQuery<UserRequest> q = cb.createQuery(UserRequest.class);
+		Root<UserRequest> c = q.from(UserRequest.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
+
 	}
 
+	
 }

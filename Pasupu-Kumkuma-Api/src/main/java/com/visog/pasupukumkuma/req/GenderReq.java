@@ -5,6 +5,8 @@ package com.visog.pasupukumkuma.req;
 public class GenderReq {
 
 	private String name;
+	
+	private String code;
 
 	private String description;
 
@@ -14,6 +16,14 @@ public class GenderReq {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 
 	public String getDescription() {

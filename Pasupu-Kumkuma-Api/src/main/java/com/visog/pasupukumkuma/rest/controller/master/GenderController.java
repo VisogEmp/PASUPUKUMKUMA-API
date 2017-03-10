@@ -3,6 +3,7 @@ package com.visog.pasupukumkuma.rest.controller.master;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.CookieParam;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -37,11 +38,11 @@ public class GenderController {
 	 */
 
 	@POST
-	@Consumes("application/json")
+	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/gender")
 	public PasupuKumkumaResponse createGender(GenderReq req) {
 
-		service.saveGender(req);
+		service.saveGender(req);;
 
 		PasupuKumkumaResponse pasupukumkumaResponse = new PasupuKumkumaResponse();
 		pasupukumkumaResponse.setMessage("Gender saved succcessfully");
@@ -52,17 +53,17 @@ public class GenderController {
 	}
 
 	/**
-	 * This method updates the Role
+	 * This method updates the gender
 	 * 
 	 * @param req
 	 * @return
 	 */
 	@PUT
-	@Consumes("application/json")
-	@Path("/gender/{genderId}")
-	public PasupuKumkumaResponse updateGender(@PathParam("id") String genderId, GenderReq req) {
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/gender/{GENDER_ID}")
+	public PasupuKumkumaResponse updateGender(@PathParam("GENDER_ID") String genderId, GenderReq req) {
 
-		service.updateGender(req, genderId);
+		service.updateGender(req, genderId);;
 
 		PasupuKumkumaResponse pasupukumkumaResponse = new PasupuKumkumaResponse();
 		pasupukumkumaResponse.setMessage("Gender updated succcessfully");
@@ -79,18 +80,17 @@ public class GenderController {
 	 * @return
 	 */
 	@GET
-	@Consumes("application/json")
+	
 	@Path("/gender")
 	public PasupuKumkumaResponse getGenders() {
 
-		service.getGenders();
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
+		pasupuKumkumaResponse.setData(service.getGender());
+		pasupuKumkumaResponse.setMessage("gender fetched succcessfully");
+		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
-		PasupuKumkumaResponse pasupukumkumaResponse = new PasupuKumkumaResponse();
-		pasupukumkumaResponse.setMessage("Gender fetched succcessfully");
-		pasupukumkumaResponse.setStatus(Status.STATUS_SUCCESS);
-		pasupukumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-
-		return pasupukumkumaResponse;
+		return pasupuKumkumaResponse;
 
 	}
 
@@ -101,19 +101,45 @@ public class GenderController {
 	 */
 
 	@GET
-	@Produces("application/json")
-	@Path("/gender/{genderId}")
+	@Path("/gender/{GENDER_ID}")
 	public PasupuKumkumaResponse getGender(String id) {
 
-		service.getGender(id);
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
+		pasupuKumkumaResponse.setData(service.getGender(id));
+		pasupuKumkumaResponse.setMessage("Gender fetched succcessfully");
+		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
-		PasupuKumkumaResponse pasupukumkumaResponse = new PasupuKumkumaResponse();
-		pasupukumkumaResponse.setMessage("Gender fetched succcessfully");
-		pasupukumkumaResponse.setStatus(Status.STATUS_SUCCESS);
-		pasupukumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+		return pasupuKumkumaResponse;
 
-		return pasupukumkumaResponse;
+	}
+	
+	/**
+	 * This method delete the role
+	 * 
+	 * @return
+	 */
+	
+	@DELETE
+	@Path("/gender/{GENDER_ID}")
+	public PasupuKumkumaResponse deleteRole(@PathParam("GENDER_ID") String genderId) {
+		
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
+		if(service.deleteGender(genderId)) {
+			pasupuKumkumaResponse.setMessage("Gender deleted succcessfully");
+			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+		} else {
+			pasupuKumkumaResponse.setMessage("Failed to delete he gender");
+			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
+			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
+		}
+
+
+		return pasupuKumkumaResponse;
+	
+	
 	}
 
 }

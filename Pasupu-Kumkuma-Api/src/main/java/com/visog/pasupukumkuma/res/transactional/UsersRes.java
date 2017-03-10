@@ -3,33 +3,33 @@ package com.visog.pasupukumkuma.res.transactional;
 import java.util.Date;
 
 public class UsersRes {
-	
+
 	private String id;
-	
-    private String name;
-	
-	private String email;
-	
-	private String alternativeEmail;
-	
-	private String password;
-	
-	private String phoneNo;
-	
-	private Date dob;
-	
-	private String birthPlace;
-	
-	private String birthTime;
-	
-	private String raasi;
-	
-	private String nakshatram;
-	
+
 	private String role;
-	
-    private String gender;
-	
+
+	private String gender;
+
+	private String name;
+
+	private String email;
+
+	private String alternativeEmail;
+
+	private String password;
+
+	private String phoneNo;
+
+	private Date dob;
+
+	private String birthPlace;
+
+	private Date birthTime;
+
+	private String raasi;
+
+	private String nakshatram;
+
 	private String status;
 
 	public String getId() {
@@ -38,6 +38,22 @@ public class UsersRes {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	public String getName() {
@@ -96,11 +112,11 @@ public class UsersRes {
 		this.birthPlace = birthPlace;
 	}
 
-	public String getBirthTime() {
+	public Date getBirthTime() {
 		return birthTime;
 	}
 
-	public void setBirthTime(String birthTime) {
+	public void setBirthTime(Date birthTime) {
 		this.birthTime = birthTime;
 	}
 
@@ -120,22 +136,6 @@ public class UsersRes {
 		this.nakshatram = nakshatram;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
 	public String getStatus() {
 		return status;
 	}
@@ -143,7 +143,5 @@ public class UsersRes {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
 
 }

@@ -11,21 +11,27 @@ import javax.transaction.Transactional;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.dao.AbstractDao;
-import com.visog.pasupukumkuma.dao.transactional.UsersDao;
-import com.visog.pasupukumkuma.model.transactional.Users;
+import com.visog.pasupukumkuma.dao.transactional.AddressDao;
+import com.visog.pasupukumkuma.model.transactional.Address;
 
 @Singleton
 @Transactional
-public class UsersDaoImpl extends AbstractDao implements UsersDao {
+public class AddressDaoImpl extends AbstractDao implements AddressDao {
+	
+	private static final Logger logger = Logger.getLogger(AddressDaoImpl.class);
 
-	private static final Logger logger = Logger.getLogger(UsersDaoImpl.class);
-
-	public List<Users> getUsers() {
+	/**
+	 * This method returns the Address data
+	 */
+	public List<Address> getAddress() {
+		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Users> q = cb.createQuery(Users.class);
-		Root<Users> c = q.from(Users.class);
+		CriteriaQuery<Address> q = cb.createQuery(Address.class);
+		Root<Address> c = q.from(Address.class);
 		q.select(c);
 		return em.createQuery(q).getResultList();
+		
+		
 	}
 
 }

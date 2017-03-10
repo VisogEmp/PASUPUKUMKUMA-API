@@ -7,16 +7,11 @@ import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
 
-import com.sun.jersey.core.header.FormDataContentDisposition;
-import com.visog.pasupukumkuma.constants.UploadFileService;
 import com.visog.pasupukumkuma.dao.master.PujaDao;
-import com.visog.pasupukumkuma.model.master.Country;
 import com.visog.pasupukumkuma.model.master.Puja;
-import com.visog.pasupukumkuma.model.master.State;
 import com.visog.pasupukumkuma.model.master.Status;
 import com.visog.pasupukumkuma.req.PujaReq;
 import com.visog.pasupukumkuma.res.PujaRes;
-import com.visog.pasupukumkuma.res.StateRes;
 import com.visog.pasupukumkuma.service.master.PujaService;
 import com.visog.pasupukumkuma.utils.DaoUtils;
 
@@ -32,13 +27,13 @@ public class PujaServiceImpl implements PujaService{
 	 */
 
 	public Boolean savePuja(PujaReq req) {
-		UploadFileService  upf=new UploadFileService ();
+		//UploadFileService  upf=new UploadFileService ();
 		Puja puja = new Puja();
 		puja.setName(req.getName());
 		puja.setDescription(req.getDescription());
 		puja.setPrice(req.getPrice());
 		puja.setDuration(req.getDuration());
-		
+		puja.setPhoto(req.getPhoto());
 		
 	
 	/*	puja.setPhoto(upf.uploadFile(req.getPhoto(), fileDetail));*/
