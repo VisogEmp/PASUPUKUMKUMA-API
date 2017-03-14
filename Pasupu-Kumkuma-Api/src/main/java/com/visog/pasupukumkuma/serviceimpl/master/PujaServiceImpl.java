@@ -38,7 +38,7 @@ public class PujaServiceImpl implements PujaService{
 		puja.setDescription(req.getDescription());
 		puja.setPrice(req.getPrice());
 		puja.setDuration(req.getDuration());
-		
+		puja.setPhoto(req.getPhoto());
 		
 	
 	/*	puja.setPhoto(upf.uploadFile(req.getPhoto(), fileDetail));*/

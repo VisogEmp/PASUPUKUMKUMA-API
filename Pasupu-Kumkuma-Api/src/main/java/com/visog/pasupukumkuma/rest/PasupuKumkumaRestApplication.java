@@ -9,6 +9,7 @@ import com.visog.pasupukumkuma.rest.controller.AdminController;
 import com.visog.pasupukumkuma.rest.controller.SuperAdminController;
 import com.visog.pasupukumkuma.rest.controller.master.CityController;
 import com.visog.pasupukumkuma.rest.controller.master.CountryController;
+import com.visog.pasupukumkuma.rest.controller.master.CouponTypeController;
 import com.visog.pasupukumkuma.rest.controller.master.GenderController;
 import com.visog.pasupukumkuma.rest.controller.master.NakshatramController;
 import com.visog.pasupukumkuma.rest.controller.master.PujaController;
@@ -41,6 +42,7 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(StatusController.class);
 		classes.add(PujaSamagriController.class);
 		classes.add(UsersController.class);
+		classes.add(CouponTypeController.class);
 		
 	}
 
