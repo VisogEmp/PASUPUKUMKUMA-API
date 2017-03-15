@@ -1,9 +1,7 @@
-package com.visog.pasupukumkuma.res.transactional;
+package com.visog.pasupukumkuma.req.transactional;
 
 
-public class PujaOrderRes {
-	
-	private String id;
+public class PujaOrderReq {
 	
 	private String user;
 	
@@ -14,14 +12,6 @@ public class PujaOrderRes {
 	private Double payed;
 	
 	private String status;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getUser() {
 		return user;
@@ -64,4 +54,6 @@ public class PujaOrderRes {
 	}
 
 	
+	
+
 }
