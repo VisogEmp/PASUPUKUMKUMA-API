@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 import com.visog.pasupukumkuma.model.AbstractModel;
 import com.visog.pasupukumkuma.model.master.CouponType;
 
-@Table(name = "COUPON_VALUE")
+@Table(name = "COUPAN_VALUE")
 @Entity
 
 public class CouponValue extends AbstractModel {

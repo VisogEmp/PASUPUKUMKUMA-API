@@ -18,9 +18,12 @@
 			<class>com.visog.pasupukumkuma.model.master.PujaSamagri</class>
 			<class>com.visog.pasupukumkuma.model.master.Status</class>
 			<class>com.visog.pasupukumkuma.model.master.CouponType</class>
+			
 			<class>com.visog.pasupukumkuma.model.transactional.Users</class>
 			<class>com.visog.pasupukumkuma.model.transactional.Address</class>
 			<class>com.visog.pasupukumkuma.model.transactional.UserRequest</class>
+			<class>com.visog.pasupukumkuma.model.transactional.CouponValue</class>
+			<class>com.visog.pasupukumkuma.model.transactional.Contact</class>
 			
 		
 		

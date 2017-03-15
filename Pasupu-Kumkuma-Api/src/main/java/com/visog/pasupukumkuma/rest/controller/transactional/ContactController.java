@@ -15,30 +15,30 @@ import javax.ws.rs.core.MediaType;
 import org.apache.log4j.Logger;
 
 import com.visog.pasupukumkuma.constants.Status;
-import com.visog.pasupukumkuma.req.transactional.UsersReq;
+import com.visog.pasupukumkuma.req.transactional.ContactReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
-import com.visog.pasupukumkuma.service.transactional.UsersService;
+import com.visog.pasupukumkuma.service.transactional.ContactService;
 
 @Path("/transactional")
 @Produces(MediaType.APPLICATION_JSON)
-public class UsersController {
-
-	private static final Logger logger = Logger.getLogger(UsersController.class);
+public class ContactController {
+	
+	private static final Logger logger = Logger.getLogger(ContactController.class);
 
 	private @CookieParam("User-Identifier") String userIdentifier;
-
+	
 	@Inject
-	private UsersService service;
-
+	private ContactService service;
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/users")
-	public PasupuKumkumaResponse createUser(UsersReq req) {
+	@Path("/contact")
+	public PasupuKumkumaResponse createContact(ContactReq req) {
 
-		service.saveUser(req);
+		service.saveContact(req);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Users saved succcessfully");
+		pasupuKumkumaResponse.setMessage("contact saved successfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -48,13 +48,27 @@ public class UsersController {
 
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/users/{usersId}")
-	public PasupuKumkumaResponse updateUser(@PathParam("usersId") String usersId, UsersReq req) {
+	@Path("/contact/{contactId}")
+	public PasupuKumkumaResponse updateContact(@PathParam("contactId") String contactId, ContactReq req) {
 
-		service.updateUser(req, usersId);
+		service.updateContact(req, contactId);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Users updated succcessfully");
+		pasupuKumkumaResponse.setMessage("contact updated successfully");
+		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
+		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
+
+		return pasupuKumkumaResponse;
+
+	}
+	
+	@GET
+	@Path("/contact")
+	public PasupuKumkumaResponse getContacts() {
+
+		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
+		pasupuKumkumaResponse.setData(service.getContacts());
+		pasupuKumkumaResponse.setMessage("contacts fetched successfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -63,51 +77,37 @@ public class UsersController {
 	}
 
 	@GET
-	@Path("/users")
-	public PasupuKumkumaResponse getUsers() {
+	@Path("/contact/{contactId}")
+	public PasupuKumkumaResponse getContacts(@PathParam("contactId") String contactId1) {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getUsers());
-		pasupuKumkumaResponse.setMessage("Users fetched succcessfully");
+		pasupuKumkumaResponse.setData(service.getContact(contactId1));
+		pasupuKumkumaResponse.setMessage("contact fetched successfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
 		return pasupuKumkumaResponse;
 
 	}
-
-	@GET
-	@Path("/users/{usersId}")
-	public PasupuKumkumaResponse getUser(@PathParam("usersId") String usersId) {
-
-		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setData(service.getUser(usersId));
-		pasupuKumkumaResponse.setMessage("User fetched succcessfully");
-		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
-		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
-
-		return pasupuKumkumaResponse;
-
-	}
-
+	
 	@DELETE
-	@Path("/users/{usersId}")
-	public PasupuKumkumaResponse deleteRole(@PathParam("usersId") String usersId) {
-
+	@Path("/contact/{contactid}")
+	public PasupuKumkumaResponse deleteContact(@PathParam("contactid") String contactId1) {
+		
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
-		if (service.deleteUser(usersId)) {
-			pasupuKumkumaResponse.setMessage("Users deleted succcessfully");
+		if(service.deleteContact(contactId1)) {
+			pasupuKumkumaResponse.setMessage("contact deleted successfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			pasupuKumkumaResponse.setMessage("Failed to delete the User");
+			pasupuKumkumaResponse.setMessage("Failed to delete the contact");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}
 
-		return pasupuKumkumaResponse;
-
+		return pasupuKumkumaResponse;	
+	
 	}
 
 }
