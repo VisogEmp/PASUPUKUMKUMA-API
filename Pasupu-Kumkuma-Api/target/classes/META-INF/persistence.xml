@@ -9,9 +9,9 @@
 		<jta-data-source>pasupukumkumaDB</jta-data-source>
 		
 		    <class>com.visog.pasupukumkuma.model.master.Roles</class>
+		    <class>com.visog.pasupukumkuma.model.master.Gender</class>
 			<class>com.visog.pasupukumkuma.model.master.Country</class>
 			<class>com.visog.pasupukumkuma.model.master.State</class>
-			<class>com.visog.pasupukumkuma.model.master.Gender</class>
 			<class>com.visog.pasupukumkuma.model.master.City</class>
 			<class>com.visog.pasupukumkuma.model.master.Puja</class>		
 			<class>com.visog.pasupukumkuma.model.master.Nakshatram</class>

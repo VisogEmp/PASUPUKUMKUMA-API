@@ -19,7 +19,7 @@ import com.visog.pasupukumkuma.req.transactional.UserRequestReq;
 import com.visog.pasupukumkuma.res.PasupuKumkumaResponse;
 import com.visog.pasupukumkuma.service.transactional.UserRequestService;
 
-/*sudha*/
+
 @Path("/transactional")
 @Produces(MediaType.APPLICATION_JSON)
 

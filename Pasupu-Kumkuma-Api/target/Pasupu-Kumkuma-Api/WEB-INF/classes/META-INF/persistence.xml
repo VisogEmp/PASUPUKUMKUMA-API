@@ -9,6 +9,7 @@
 		<jta-data-source>pasupukumkumaDB</jta-data-source>
 		
 		    <class>com.visog.pasupukumkuma.model.master.Roles</class>
+		    <class>com.visog.pasupukumkuma.model.master.Gender</class>
 			<class>com.visog.pasupukumkuma.model.master.Country</class>
 			<class>com.visog.pasupukumkuma.model.master.State</class>
 			<class>com.visog.pasupukumkuma.model.master.Gender</class>
@@ -18,6 +19,7 @@
 			<class>com.visog.pasupukumkuma.model.master.PujaSamagri</class>
 			<class>com.visog.pasupukumkuma.model.master.Status</class>
 			<class>com.visog.pasupukumkuma.model.master.CouponType</class>
+			<class>com.visog.pasupukumkuma.model.transaction.Users</class>
 			
 			<class>com.visog.pasupukumkuma.model.transactional.Users</class>
 			<class>com.visog.pasupukumkuma.model.transactional.Address</class>
