@@ -19,7 +19,9 @@ import com.visog.pasupukumkuma.rest.controller.master.RolesController;
 import com.visog.pasupukumkuma.rest.controller.master.StateController;
 import com.visog.pasupukumkuma.rest.controller.master.StatusController;
 import com.visog.pasupukumkuma.rest.controller.transactional.AddressController;
+import com.visog.pasupukumkuma.rest.controller.transactional.CartOrdersController;
 import com.visog.pasupukumkuma.rest.controller.transactional.ContactController;
+import com.visog.pasupukumkuma.rest.controller.transactional.CouponDetailsController;
 import com.visog.pasupukumkuma.rest.controller.transactional.CouponValueController;
 import com.visog.pasupukumkuma.rest.controller.transactional.UserRequestController;
 import com.visog.pasupukumkuma.rest.controller.transactional.UsersController;
@@ -37,8 +39,7 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(CouponTypeController.class);
 		classes.add(CountryController.class);
 		classes.add(GenderController.class);
-
-		classes.add(NakshatramController.class);
+        classes.add(NakshatramController.class);
 		classes.add(RaasiController.class);
 		classes.add(StateController.class);
 		classes.add(CityController.class);
@@ -54,6 +55,8 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(UserRequestController.class);
 		classes.add(CouponValueController.class);
 		classes.add(ContactController.class);
+		classes.add(CouponDetailsController.class);
+		classes.add(CartOrdersController.class);
 		
 		
 	}

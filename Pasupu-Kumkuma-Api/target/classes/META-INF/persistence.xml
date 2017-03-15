@@ -24,6 +24,8 @@
 			<class>com.visog.pasupukumkuma.model.transactional.UserRequest</class>
 			<class>com.visog.pasupukumkuma.model.transactional.CouponValue</class>
 			<class>com.visog.pasupukumkuma.model.transactional.Contact</class>
+			<class>com.visog.pasupukumkuma.model.transactional.CouponDetails</class>
+			<class>com.visog.pasupukumkuma.model.transactional.CartOrders</class>
 			
 		
 		
