@@ -27,6 +27,7 @@
 			<class>com.visog.pasupukumkuma.model.transactional.CouponDetails</class>
 			<class>com.visog.pasupukumkuma.model.transactional.CartOrders</class>
 			<class>com.visog.pasupukumkuma.model.transactional.PujaOrder</class>
+			<class>com.visog.pasupukumkuma.model.transactional.PujaOrderDetails</class>
 		
 		
 		<!-- <class>com.visog.jobportal.AccessLinks</class> -->

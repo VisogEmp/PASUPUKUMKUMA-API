@@ -12,21 +12,22 @@
 		    <class>com.visog.pasupukumkuma.model.master.Gender</class>
 			<class>com.visog.pasupukumkuma.model.master.Country</class>
 			<class>com.visog.pasupukumkuma.model.master.State</class>
-			<class>com.visog.pasupukumkuma.model.master.Gender</class>
 			<class>com.visog.pasupukumkuma.model.master.City</class>
 			<class>com.visog.pasupukumkuma.model.master.Puja</class>		
 			<class>com.visog.pasupukumkuma.model.master.Nakshatram</class>
 			<class>com.visog.pasupukumkuma.model.master.PujaSamagri</class>
 			<class>com.visog.pasupukumkuma.model.master.Status</class>
 			<class>com.visog.pasupukumkuma.model.master.CouponType</class>
-			<class>com.visog.pasupukumkuma.model.transaction.Users</class>
 			
 			<class>com.visog.pasupukumkuma.model.transactional.Users</class>
 			<class>com.visog.pasupukumkuma.model.transactional.Address</class>
 			<class>com.visog.pasupukumkuma.model.transactional.UserRequest</class>
 			<class>com.visog.pasupukumkuma.model.transactional.CouponValue</class>
 			<class>com.visog.pasupukumkuma.model.transactional.Contact</class>
-			
+			<class>com.visog.pasupukumkuma.model.transactional.CouponDetails</class>
+			<class>com.visog.pasupukumkuma.model.transactional.CartOrders</class>
+			<class>com.visog.pasupukumkuma.model.transactional.PujaOrder</class>
+			<class>com.visog.pasupukumkuma.model.transactional.PujaOrderDetails</class>
 		
 		
 		<!-- <class>com.visog.jobportal.AccessLinks</class> -->

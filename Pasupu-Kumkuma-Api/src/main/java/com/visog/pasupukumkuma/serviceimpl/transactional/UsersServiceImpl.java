@@ -29,6 +29,7 @@ public class UsersServiceImpl implements UsersService {
 	public void saveUser(UsersReq req) {
 
 		Users users = new Users();
+		
 		Roles roles = new Roles();
 		roles.setId(req.getRole());
 		users.setRole(roles);
