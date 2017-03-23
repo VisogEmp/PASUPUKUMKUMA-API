@@ -25,6 +25,7 @@ import com.visog.pasupukumkuma.rest.controller.transactional.CouponDetailsContro
 import com.visog.pasupukumkuma.rest.controller.transactional.CouponValueController;
 import com.visog.pasupukumkuma.rest.controller.transactional.PujaOrderController;
 import com.visog.pasupukumkuma.rest.controller.transactional.PujaOrderDetailsController;
+import com.visog.pasupukumkuma.rest.controller.transactional.RefferalDetailsController;
 import com.visog.pasupukumkuma.rest.controller.transactional.UserRequestController;
 import com.visog.pasupukumkuma.rest.controller.transactional.UsersController;
 
@@ -62,6 +63,7 @@ public class PasupuKumkumaRestApplication extends Application {
 		classes.add(PujaOrderController.class);
 		classes.add(PujaOrderController.class);
 		classes.add(PujaOrderDetailsController.class);
+		classes.add(RefferalDetailsController.class);
 		
 	}
 

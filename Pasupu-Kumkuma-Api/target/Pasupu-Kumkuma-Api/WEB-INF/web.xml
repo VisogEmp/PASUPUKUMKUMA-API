@@ -38,6 +38,7 @@
          </servlet-class>
 	</servlet>
 
+
 	<servlet-mapping>
 		<servlet-name>resteasy-servlet</servlet-name>
 		<url-pattern>/*</url-pattern>
@@ -60,7 +61,7 @@
   </init-param>
   <init-param>
     <param-name>cors.allowed.methods</param-name>
-    <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+    <param-value>GET,POST, DELETE,HEAD,OPTIONS,PUT</param-value>
   </init-param>
   <init-param>
     <param-name>cors.allowed.headers</param-name>

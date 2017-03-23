@@ -4,6 +4,7 @@ com\visog\pasupukumkuma\dao\transactional\UserRequestDao.class
 com\visog\pasupukumkuma\dao\master\StateDao.class
 com\visog\pasupukumkuma\serviceimpl\master\CouponTypeServiceImpl.class
 com\visog\pasupukumkuma\dao\transactional\ContactDao.class
+com\visog\pasupukumkuma\service\transactional\RefferalDetailsService.class
 com\visog\pasupukumkuma\rest\controller\transactional\CouponDetailsController.class
 com\visog\pasupukumkuma\req\StatusReq.class
 com\visog\pasupukumkuma\service\master\RaasiService.class
@@ -23,6 +24,7 @@ com\visog\pasupukumkuma\constants\Status.class
 com\visog\pasupukumkuma\service\master\NakshatramService.class
 com\visog\pasupukumkuma\serviceimpl\transactional\CartOrdersServiceImpl.class
 com\visog\pasupukumkuma\rest\controller\master\GenderController.class
+com\visog\pasupukumkuma\res\transactional\RefferalDetailsRes.class
 com\visog\pasupukumkuma\res\transactional\UserRequestRes.class
 com\visog\pasupukumkuma\res\AccessLinksResponse.class
 com\visog\pasupukumkuma\res\NakshatramRes.class
@@ -31,6 +33,7 @@ com\visog\pasupukumkuma\daoimpl\master\CouponDaoImpl.class
 com\visog\pasupukumkuma\dao\transactional\UsersDao.class
 com\visog\pasupukumkuma\rest\controller\master\PujaSamagriController.class
 com\visog\pasupukumkuma\serviceimpl\transactional\UsersServiceImpl.class
+com\visog\pasupukumkuma\daoimpl\transactional\RefferalDetailsDaoImpl.class
 com\visog\pasupukumkuma\serviceimpl\master\GenderServiceImpl.class
 com\visog\pasupukumkuma\service\transactional\CouponValueService.class
 com\visog\pasupukumkuma\serviceimpl\transactional\ContactServiceImpl.class
@@ -80,6 +83,7 @@ com\visog\pasupukumkuma\utils\ExceptionUtils.class
 com\visog\pasupukumkuma\service\master\CouponTypeService.class
 com\visog\pasupukumkuma\req\CouponTypeReq.class
 com\visog\pasupukumkuma\rest\controller\master\NakshatramController.class
+com\visog\pasupukumkuma\rest\controller\transactional\RefferalDetailsController.class
 com\visog\pasupukumkuma\rest\controller\transactional\UserRequestController.class
 com\visog\pasupukumkuma\serviceimpl\master\CityServiceImpl.class
 com\visog\pasupukumkuma\res\CityRes.class
@@ -90,6 +94,7 @@ com\visog\pasupukumkuma\req\transactional\ContactReq.class
 com\visog\pasupukumkuma\daoimpl\master\GenderDaoImpl.class
 com\visog\pasupukumkuma\req\RolesReq.class
 com\visog\pasupukumkuma\utils\RandomUtils.class
+com\visog\pasupukumkuma\req\transactional\RefferalDetailsReq.class
 com\visog\pasupukumkuma\servlet\VisogResponse.class
 com\visog\pasupukumkuma\daoimpl\master\StateDaoImpl.class
 com\visog\pasupukumkuma\service\transactional\AddressService.class
@@ -126,6 +131,7 @@ com\visog\pasupukumkuma\model\transactional\CartOrders.class
 com\visog\pasupukumkuma\dao\master\PujaSamagriDao.class
 com\visog\pasupukumkuma\service\master\CityService.class
 com\visog\pasupukumkuma\serviceimpl\transactional\PujaOrderDetailsServiceImpl.class
+com\visog\pasupukumkuma\model\transactional\RefferalDetails.class
 com\visog\pasupukumkuma\utils\AppUtils.class
 com\visog\pasupukumkuma\req\GenderReq.class
 com\visog\pasupukumkuma\daoimpl\master\CountryDaoImpl.class
@@ -161,6 +167,7 @@ com\visog\pasupukumkuma\utils\PasswordSecurityUtils.class
 com\visog\pasupukumkuma\utils\DaoUtils.class
 com\visog\pasupukumkuma\serviceimpl\SuperAdminServiceImpl.class
 com\visog\pasupukumkuma\utils\SecurityUtils.class
+com\visog\pasupukumkuma\serviceimpl\transactional\RefferalDetailsServiceImpl.class
 com\visog\pasupukumkuma\rest\controller\master\CountryController.class
 com\visog\pasupukumkuma\res\transactional\CouponValueRes.class
 com\visog\pasupukumkuma\model\master\City.class
@@ -177,6 +184,7 @@ com\visog\pasupukumkuma\model\transactional\CouponValue.class
 com\visog\pasupukumkuma\serviceimpl\master\StateServiceImpl.class
 com\visog\pasupukumkuma\utils\ParamUtils.class
 com\visog\pasupukumkuma\req\NakshatramReq.class
+com\visog\pasupukumkuma\dao\transactional\RefferalDetailsDao.class
 com\visog\pasupukumkuma\daoimpl\master\RolesDaoImpl.class
 com\visog\pasupukumkuma\service\transactional\UsersService.class
 com\visog\pasupukumkuma\dao\AbstractDao.class

@@ -44,7 +44,7 @@ public class RaasiController {
 		service.saveRaasi(req);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Role saved succcessfully");
+		pasupuKumkumaResponse.setMessage("Raasi saved succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -66,7 +66,7 @@ public class RaasiController {
 		service.updateRaasi(req, raasiId);
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
-		pasupuKumkumaResponse.setMessage("Role updated succcessfully");
+		pasupuKumkumaResponse.setMessage("Raasi updated succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -105,7 +105,7 @@ public class RaasiController {
 
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 		pasupuKumkumaResponse.setData(service.getRaasi(raasiId));
-		pasupuKumkumaResponse.setMessage("Role fetched succcessfully");
+		pasupuKumkumaResponse.setMessage("Raasi fetched succcessfully");
 		pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 		pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 
@@ -126,11 +126,11 @@ public class RaasiController {
 		PasupuKumkumaResponse pasupuKumkumaResponse = new PasupuKumkumaResponse();
 
 		if(service.deleteRaasi(raasiId)) {
-			pasupuKumkumaResponse.setMessage("Role deleted succcessfully");
+			pasupuKumkumaResponse.setMessage("Raasi deleted succcessfully");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_SUCCESS);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_SUCCESS);
 		} else {
-			pasupuKumkumaResponse.setMessage("Failed to delete he role");
+			pasupuKumkumaResponse.setMessage("Failed to delete he Raasi");
 			pasupuKumkumaResponse.setStatus(Status.STATUS_FAIL);
 			pasupuKumkumaResponse.setStatusCode(Status.STATUSCODE_FAIL);
 		}

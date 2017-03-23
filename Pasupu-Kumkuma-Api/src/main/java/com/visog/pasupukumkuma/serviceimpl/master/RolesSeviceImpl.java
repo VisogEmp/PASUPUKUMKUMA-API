@@ -84,7 +84,7 @@ public class RolesSeviceImpl implements RolesService {
 	 * This method deletes the given role  
 	 */
 	public Boolean deleteRole(String roleId) {
-		return (dao.delete(Roles.class, roleId) != 0);
+		return (dao.delete(Roles.class,roleId)!=0);
 		
 	}
 
